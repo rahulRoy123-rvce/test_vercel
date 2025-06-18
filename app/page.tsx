@@ -27,6 +27,7 @@ import Link from "next/link"
 import Image from "next/image"
 import AgentCarousel from "@/components/agent-carousel"
 import { ThemeToggle } from "@/components/theme-toggle"
+import AgentCarouselSide from "@/components/agent-carousel-side"
 
 export default function BanyanIntelligenceLanding() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
@@ -233,6 +234,30 @@ export default function BanyanIntelligenceLanding() {
         </div>
       </section>
 
+      {/* Agent Detailed Demos Section */}
+      <section id="agent-demos" className="py-20 md:py-32 dotted-background-cyan relative">
+        <div className="absolute inset-0 bg-gradient-to-br from-cyan-500/5 to-purple-500/5 dark:from-cyan-900/5 dark:to-purple-900/5" />
+        <div className="container px-4 md:px-6 relative">
+          <div className="text-center space-y-4 mb-16">
+            <Badge
+              variant="secondary"
+              className="bg-cyan-100 dark:bg-cyan-900/50 text-cyan-700 dark:text-cyan-300 border-cyan-200 dark:border-cyan-700"
+            >
+              Agent Deep Dive
+            </Badge>
+            <h2 className="text-3xl font-bold tracking-tight sm:text-4xl md:text-5xl text-gray-900 dark:text-white">
+              See Our Agents in Detail
+            </h2>
+            <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
+              Explore each agent's capabilities side-by-side with real demos.
+            </p>
+          </div>
+
+          {/* Side-by-side carousel */}
+          <AgentCarouselSide />
+        </div>
+      </section>
+
       {/* ROP Analytical Bot Section */}
       <section id="rop" className="py-20 md:py-32 dotted-background-cyan relative">
         <div className="absolute inset-0 bg-gradient-to-br from-blue-500/5 to-blue-500/10 dark:from-blue-900/5 dark:to-blue-900/10" />
@@ -242,14 +267,13 @@ export default function BanyanIntelligenceLanding() {
               variant="secondary"
               className="bg-cyan-100 dark:bg-cyan-900/50 text-cyan-700 dark:text-cyan-300 border-cyan-200 dark:border-cyan-700"
             >
-              Our Analytical Bot
+              ROP ( RAN Observability Platform )
             </Badge>
             <h2 className="text-3xl font-bold tracking-tight sm:text-4xl md:text-5xl text-gray-900 dark:text-white">
-              ROP Analytical Bot
+              Real-Time Network Intelligence at Scale
             </h2>
             <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
-              Gain actionable insights into return on performance and key metrics across your organization with
-              ROP's advanced analytics capabilities.
+              Unlock deep insights into your radio network with enterprise-grade observability. Our platform seamlessly integrates OpenTelemetry-standard data sources, processes high-volume telemetry through real-time Spark pipelines, and delivers actionable intelligence through intuitive dashboards.
             </p>
           </div>
 
@@ -258,9 +282,9 @@ export default function BanyanIntelligenceLanding() {
               <div className="mx-auto mb-4 flex h-16 w-16 items-center justify-center rounded-full bg-cyan-100 dark:bg-cyan-500/20 border border-cyan-200 dark:border-cyan-500/30">
                 <BarChart3 className="h-8 w-8 text-cyan-600 dark:text-cyan-400" />
               </div>
-              <CardTitle className="text-2xl sm:text-3xl text-gray-900 dark:text-white">ROP Analytical Bot</CardTitle>
+              <CardTitle className="text-2xl sm:text-3xl text-gray-900 dark:text-white">ROP ( RAN Observability Platform )</CardTitle>
               <CardDescription className="text-gray-600 dark:text-gray-300 text-base sm:text-lg">
-                Unlock powerful analytics without the complexity.
+                Unlock deep insights into your radio network with enterprise-grade observability.
               </CardDescription>
             </CardHeader>
             <CardContent className="p-4 sm:p-6">
@@ -269,20 +293,24 @@ export default function BanyanIntelligenceLanding() {
                 <div className="space-y-4">
                   {[
                     {
-                      title: 'Performance Dashboards',
-                      description: 'Real-time dashboards highlighting ROI and efficiency KPIs',
+                      title: 'OpenTelemetry Integration',
+                      description: 'Standards-based data ingestion from any network element',
                     },
                     {
-                      title: 'Predictive Analytics',
-                      description: 'Machine-learning models forecast future performance trends',
+                      title: 'Real-Time Processing',
+                      description: 'Apache Spark/Kafka pipelines for sub-second-latency analytics',
                     },
                     {
-                      title: 'Automated Reporting',
-                      description: 'Generates easy-to-share reports for stakeholders',
+                      title: 'Time Series Database',
+                      description: 'High-performance storage for instant queries and historical analysis',
                     },
                     {
-                      title: 'Custom Alerts',
-                      description: 'Notifies you when metrics move outside desired thresholds',
+                      title: 'OLAP Analytics Engine',
+                      description: 'Apache Pinot and other query engines on Apache Iceberg enable sub-second complex queries',
+                    },
+                    {
+                      title: 'Plug-and-Play Dashboards',
+                      description: 'Customizable KPI views with zero configuration required',
                     },
                   ].map((feature, idx) => (
                     <div key={idx} className="flex items-start space-x-3">
@@ -297,16 +325,13 @@ export default function BanyanIntelligenceLanding() {
 
                 {/* Demo Image Placeholder */}
                 <div className="w-full">
-                  <div className="aspect-video rounded-lg overflow-hidden border border-gray-200 dark:border-gray-600">
-                    <iframe
-                      width="100%"
-                      height="100%"
-                      src="https://www.youtube.com/embed/ySABFzWJENw?si=ROPdemo&rel=0"
-                      title="ROP Analytical Bot Demo Video"
-                      frameBorder="0"
-                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                      allowFullScreen
-                      className="w-full h-full"
+                  <div className="aspect-video rounded-lg overflow-hidden border border-gray-200 dark:border-gray-600 relative">
+                    <Image
+                      src="/rop.jpg"
+                      alt="ROP Platform dashboard"
+                      fill
+                      className="object-cover"
+                      sizes="(max-width: 768px) 100vw, 50vw"
                     />
                   </div>
                 </div>
@@ -454,7 +479,8 @@ export default function BanyanIntelligenceLanding() {
             </p>
           </div>
 
-          <div className="grid gap-6 sm:gap-8 md:grid-cols-2 lg:grid-cols-3 max-w-6xl mx-auto">
+          <div className="grid gap-6 sm:gap-8 md:grid-cols-2 lg:grid-cols-2 justify-center max-w-4xl mx-auto">
+            {/* Post 1 */}
             <Card className="bg-white/80 dark:bg-black/50 border-gray-200 dark:border-gray-700 hover:shadow-lg dark:hover:shadow-gray-700/20 transition-all duration-300 group">
               <div className="aspect-video bg-gradient-to-br from-cyan-100 to-cyan-200 dark:from-cyan-900/20 dark:to-cyan-700/20 rounded-t-lg border-b border-gray-200 dark:border-gray-600 relative overflow-hidden">
                 <div className="absolute inset-0 flex items-center justify-center">
@@ -466,28 +492,26 @@ export default function BanyanIntelligenceLanding() {
               <CardHeader className="pb-4">
                 <div className="flex items-center space-x-2 text-sm text-gray-500 dark:text-gray-400 mb-2">
                   <Clock className="h-4 w-4" />
-                  <span>5 min read</span>
+                  <span>6 min read</span>
                   <span>•</span>
-                  <span>December 2024</span>
+                  <span>Apr 24</span>
                 </div>
                 <CardTitle className="text-xl text-gray-900 dark:text-white group-hover:text-cyan-600 dark:group-hover:text-cyan-400 transition-colors">
-                  The Future of AI Agents in Enterprise Workflows
+                  Beyond Text-to-SQL: Harnessing the Power of Function Calling for Time Series Data Insights
                 </CardTitle>
               </CardHeader>
               <CardContent>
                 <CardDescription className="text-gray-600 dark:text-gray-300 mb-4">
-                  Explore how specialized AI agents are transforming enterprise operations by eliminating repetitive tasks and enabling teams to focus on strategic work.
+                  Explore how Function Calling combined with Text-to-SQL techniques unlocks faster, richer insights from massive time-series datasets.
                 </CardDescription>
-                <Link 
-                  href="#" 
-                  className="inline-flex items-center text-cyan-600 dark:text-cyan-400 hover:text-cyan-700 dark:hover:text-cyan-300 font-medium transition-colors"
-                >
+                <Link href="/blog/function-calling-time-series" className="inline-flex items-center text-cyan-600 dark:text-cyan-400 hover:text-cyan-700 dark:hover:text-cyan-300 font-medium transition-colors">
                   Read More
                   <ArrowRight className="ml-1 h-4 w-4" />
                 </Link>
               </CardContent>
             </Card>
 
+            {/* Post 2 */}
             <Card className="bg-white/80 dark:bg-black/50 border-gray-200 dark:border-gray-700 hover:shadow-lg dark:hover:shadow-gray-700/20 transition-all duration-300 group">
               <div className="aspect-video bg-gradient-to-br from-purple-100 to-purple-200 dark:from-purple-900/20 dark:to-purple-700/20 rounded-t-lg border-b border-gray-200 dark:border-gray-600 relative overflow-hidden">
                 <div className="absolute inset-0 flex items-center justify-center">
@@ -499,55 +523,19 @@ export default function BanyanIntelligenceLanding() {
               <CardHeader className="pb-4">
                 <div className="flex items-center space-x-2 text-sm text-gray-500 dark:text-gray-400 mb-2">
                   <Clock className="h-4 w-4" />
-                  <span>7 min read</span>
+                  <span>4 min read</span>
                   <span>•</span>
-                  <span>November 2024</span>
+                  <span>Apr 24</span>
                 </div>
                 <CardTitle className="text-xl text-gray-900 dark:text-white group-hover:text-cyan-600 dark:group-hover:text-cyan-400 transition-colors">
-                  From Dashboards to Conversations: The Evolution of Data Analysis
+                  From Dashboards to Dialogue: How CodeACT & MCP Power Autonomous Root Cause Analysis
                 </CardTitle>
               </CardHeader>
               <CardContent>
                 <CardDescription className="text-gray-600 dark:text-gray-300 mb-4">
-                  Discover how natural language interfaces are replacing complex dashboards, making data insights accessible to everyone in your organization.
+                  Dive into the shift from static dashboards to conversational analytics that automate RCA across distributed systems.
                 </CardDescription>
-                <Link 
-                  href="#" 
-                  className="inline-flex items-center text-cyan-600 dark:text-cyan-400 hover:text-cyan-700 dark:hover:text-cyan-300 font-medium transition-colors"
-                >
-                  Read More
-                  <ArrowRight className="ml-1 h-4 w-4" />
-                </Link>
-              </CardContent>
-            </Card>
-
-            <Card className="bg-white/80 dark:bg-black/50 border-gray-200 dark:border-gray-700 hover:shadow-lg dark:hover:shadow-gray-700/20 transition-all duration-300 group">
-              <div className="aspect-video bg-gradient-to-br from-green-100 to-green-200 dark:from-green-900/20 dark:to-green-700/20 rounded-t-lg border-b border-gray-200 dark:border-gray-600 relative overflow-hidden">
-                <div className="absolute inset-0 flex items-center justify-center">
-                  <div className="w-16 h-16 bg-green-200 dark:bg-green-500/20 rounded-full flex items-center justify-center border border-green-300 dark:border-green-500/30">
-                    <Users className="h-8 w-8 text-green-600 dark:text-green-400" />
-                  </div>
-                </div>
-              </div>
-              <CardHeader className="pb-4">
-                <div className="flex items-center space-x-2 text-sm text-gray-500 dark:text-gray-400 mb-2">
-                  <Clock className="h-4 w-4" />
-                  <span>6 min read</span>
-                  <span>•</span>
-                  <span>October 2024</span>
-                </div>
-                <CardTitle className="text-xl text-gray-900 dark:text-white group-hover:text-cyan-600 dark:group-hover:text-cyan-400 transition-colors">
-                  Human-Centered AI: Building Agents That Enhance Rather Than Replace
-                </CardTitle>
-              </CardHeader>
-              <CardContent>
-                <CardDescription className="text-gray-600 dark:text-gray-300 mb-4">
-                  Learn about our approach to AI agent design that prioritizes human collaboration and amplifies existing capabilities rather than replacing human workers.
-                </CardDescription>
-                <Link 
-                  href="#" 
-                  className="inline-flex items-center text-cyan-600 dark:text-cyan-400 hover:text-cyan-700 dark:hover:text-cyan-300 font-medium transition-colors"
-                >
+                <Link href="/blog/codeact-mcp-rca" className="inline-flex items-center text-cyan-600 dark:text-cyan-400 hover:text-cyan-700 dark:hover:text-cyan-300 font-medium transition-colors">
                   Read More
                   <ArrowRight className="ml-1 h-4 w-4" />
                 </Link>
@@ -556,14 +544,10 @@ export default function BanyanIntelligenceLanding() {
           </div>
 
           <div className="text-center mt-12">
-            <Button 
-              variant="outline" 
-              size="lg" 
-              className="border-gray-300 dark:border-gray-600 text-gray-900 dark:text-white bg-white dark:bg-transparent hover:bg-gray-50 dark:hover:bg-gray-800 text-lg px-8 py-6"
-            >
+            <Link href="/blog" className="inline-flex items-center border border-gray-300 dark:border-gray-600 text-gray-900 dark:text-white bg-white dark:bg-transparent hover:bg-gray-50 dark:hover:bg-gray-800 text-lg font-medium px-8 py-6 rounded-md transition-colors">
               View All Posts
               <BookOpen className="ml-2 h-5 w-5" />
-            </Button>
+            </Link>
           </div>
         </div>
       </section>
@@ -628,11 +612,7 @@ export default function BanyanIntelligenceLanding() {
                   hello@banyanintelligence.com
                 </Link>
               </div>
-              <div className="text-md text-gray-600">
-                
-                  AI Assistants for everyone at work
-                
-              </div>
+             
             </div>
 
             {/* Agents */}
@@ -645,7 +625,7 @@ export default function BanyanIntelligenceLanding() {
                   </Link>
                 </li>
                 <li>
-                  <Link href="#" className="hover:text-gray-900 transition-colors">
+                  <Link href="https://gobot.one/" className="hover:text-gray-900 transition-colors">
                     GoBot
                   </Link>
                 </li>
@@ -662,8 +642,13 @@ export default function BanyanIntelligenceLanding() {
                   </Link>
                 </li>
                 <li>
-                  <Link href="#" className="hover:text-gray-900 transition-colors">
+                  <Link href="/privacy-policy" className="hover:text-gray-900 transition-colors">
                     Privacy Policy
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/terms-of-service" className="hover:text-gray-900 transition-colors">
+                    Terms of Service
                   </Link>
                 </li>
               </ul>
@@ -698,7 +683,7 @@ export default function BanyanIntelligenceLanding() {
                   &copy; {new Date().getFullYear()} banyanintelligence.com
                 </p>
                 <p className="text-sm text-gray-500 hidden md:block">
-                  Hyperproductive AI Agents for the Modern Workplace
+AI Assistants for everyone at work
                 </p>
               </div>
               

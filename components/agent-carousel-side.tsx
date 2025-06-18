@@ -10,7 +10,7 @@ import { MessageSquare, BarChart3, Search } from "lucide-react"
 const agents = [
   {
     id: "ops-agent",
-    title: "Ops Agent (ELL3)",
+    title: "ELL3 - Ops Agent",
     subtitle: "User Interviews, Not Surveys",
     description:
       "Ditch boring forms. GoBot is your AI-powered interviewer that chats with your users—over WhatsApp, email, or web—capturing feedback that feels human.",

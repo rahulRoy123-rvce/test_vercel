@@ -70,6 +70,12 @@ export default function BanyanIntelligenceLanding() {
             >
               Blog
             </Link>
+            <Link
+              href="/about"
+              className="text-sm font-medium text-gray-600 dark:text-gray-300 hover:text-cyan-500 dark:hover:text-cyan-400 transition-colors"
+            >
+              About
+            </Link>
           </nav>
 
           <div className="flex items-center space-x-2 md:space-x-4">
@@ -114,6 +120,13 @@ export default function BanyanIntelligenceLanding() {
                 onClick={() => setMobileMenuOpen(false)}
               >
                 Blog
+              </Link>
+              <Link
+                href="/about"
+                className="block text-base font-medium text-gray-600 dark:text-gray-300 hover:text-cyan-500 dark:hover:text-cyan-400 transition-colors py-2"
+                onClick={() => setMobileMenuOpen(false)}
+              >
+                About
               </Link>
               <Button 
                 className="w-full sm:hidden bg-cyan-500 hover:bg-cyan-600 text-white font-semibold mt-4" 
@@ -212,7 +225,7 @@ export default function BanyanIntelligenceLanding() {
         </div>
       </section>*/}
 
-      {/* Our Agents Section */}
+      {/* Our Agents Section 
       <section id="agents" className="py-20 md:py-32 dotted-background-cyan relative">
         <div className="absolute inset-0 bg-gradient-to-br from-cyan-500/5 to-purple-500/5 dark:from-cyan-900/5 dark:to-purple-900/5" />
         <div className="container px-4 md:px-6 relative">
@@ -232,10 +245,10 @@ export default function BanyanIntelligenceLanding() {
 
           <AgentCarousel />
         </div>
-      </section>
+      </section>*/}
 
       {/* Agent Detailed Demos Section */}
-      <section id="agent-demos" className="py-20 md:py-32 dotted-background-cyan relative">
+      <section id="agent-demos" className="py-12 md:py-20 dotted-background-cyan relative">
         <div className="absolute inset-0 bg-gradient-to-br from-cyan-500/5 to-purple-500/5 dark:from-cyan-900/5 dark:to-purple-900/5" />
         <div className="container px-4 md:px-6 relative">
           <div className="text-center space-y-4 mb-16">
@@ -243,13 +256,13 @@ export default function BanyanIntelligenceLanding() {
               variant="secondary"
               className="bg-cyan-100 dark:bg-cyan-900/50 text-cyan-700 dark:text-cyan-300 border-cyan-200 dark:border-cyan-700"
             >
-              Agent Deep Dive
+              Our Solutions
             </Badge>
             <h2 className="text-3xl font-bold tracking-tight sm:text-4xl md:text-5xl text-gray-900 dark:text-white">
-              See Our Agents in Detail
+            Our Agents in action   
             </h2>
             <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
-              Explore each agent's capabilities side-by-side with real demos.
+            Specialized agents designed to eliminate toil and amplify human capabilities across different domains.
             </p>
           </div>
 
@@ -259,7 +272,7 @@ export default function BanyanIntelligenceLanding() {
       </section>
 
       {/* ROP Analytical Bot Section */}
-      <section id="rop" className="py-20 md:py-32 dotted-background-cyan relative">
+      <section id="rop" className="py-12 md:py-20 dotted-background-cyan relative">
         <div className="absolute inset-0 bg-gradient-to-br from-blue-500/5 to-blue-500/10 dark:from-blue-900/5 dark:to-blue-900/10" />
         <div className="container px-4 md:px-6 relative">
           <div className="text-center space-y-4 mb-16">
@@ -290,7 +303,7 @@ export default function BanyanIntelligenceLanding() {
             <CardContent className="p-4 sm:p-6">
               <div className="grid gap-6 md:grid-cols-2 items-center">
                 {/* Bullet List */}
-                <div className="space-y-4">
+                <div className="space-y-4 md:order-2 order-2">
                   {[
                     {
                       title: 'OpenTelemetry Integration',
@@ -323,8 +336,8 @@ export default function BanyanIntelligenceLanding() {
                   ))}
                 </div>
 
-                {/* Demo Image Placeholder */}
-                <div className="w-full">
+                {/* Demo Image */}
+                <div className="w-full md:order-1 order-1">
                   <div className="aspect-video rounded-lg overflow-hidden border border-gray-200 dark:border-gray-600 relative">
                     <Image
                       src="/rop.jpg"
@@ -342,7 +355,7 @@ export default function BanyanIntelligenceLanding() {
       </section>
 
       {/* Why Choose Banyan Section */}
-      <section className="py-20 md:py-32 bg-gray-50/50 dark:bg-gray-900/50 dotted-background-purple relative">
+      <section className="py-12 md:py-20 bg-gray-50/50 dark:bg-gray-900/50 dotted-background-purple relative">
         <div className="absolute inset-0 bg-gradient-to-l from-purple-500/5 to-green-500/5 dark:from-purple-900/10 dark:to-green-900/5" />
         <div className="container px-4 md:px-6 relative">
           <div className="text-center space-y-4 mb-16">
@@ -363,7 +376,7 @@ export default function BanyanIntelligenceLanding() {
                 <div className="mx-auto mb-4 flex h-16 w-16 items-center justify-center rounded-full bg-cyan-100 dark:bg-cyan-500/20 border border-cyan-200 dark:border-cyan-500/30">
                   <Users className="h-8 w-8 text-cyan-600 dark:text-cyan-400" />
                 </div>
-                <CardTitle className="text-xl text-gray-900 dark:text-white">Human-Centered AI</CardTitle>
+                <CardTitle className="text-xl text-gray-900 dark:text-white min-h-[3.5rem] flex items-center justify-center">Human-Centered AI</CardTitle>
               </CardHeader>
               <CardContent>
                 <CardDescription className="text-gray-600 dark:text-gray-300">
@@ -378,7 +391,7 @@ export default function BanyanIntelligenceLanding() {
                 <div className="mx-auto mb-4 flex h-16 w-16 items-center justify-center rounded-full bg-purple-100 dark:bg-purple-500/20 border border-purple-200 dark:border-purple-500/30">
                   <Zap className="h-8 w-8 text-purple-600 dark:text-purple-400" />
                 </div>
-                <CardTitle className="text-xl text-gray-900 dark:text-white">Specialized for Your Needs</CardTitle>
+                <CardTitle className="text-xl text-gray-900 dark:text-white min-h-[3.5rem] flex items-center justify-center">Specialized for Your Needs</CardTitle>
               </CardHeader>
               <CardContent>
                 <CardDescription className="text-gray-600 dark:text-gray-300">
@@ -393,7 +406,7 @@ export default function BanyanIntelligenceLanding() {
                 <div className="mx-auto mb-4 flex h-16 w-16 items-center justify-center rounded-full bg-green-100 dark:bg-green-500/20 border border-green-200 dark:border-green-500/30">
                   <Network className="h-8 w-8 text-green-600 dark:text-green-400" />
                 </div>
-                <CardTitle className="text-xl text-gray-900 dark:text-white">Seamless Integration</CardTitle>
+                <CardTitle className="text-xl text-gray-900 dark:text-white min-h-[3.5rem] flex items-center justify-center">Seamless Integration</CardTitle>
               </CardHeader>
               <CardContent>
                 <CardDescription className="text-gray-600 dark:text-gray-300">
@@ -407,7 +420,7 @@ export default function BanyanIntelligenceLanding() {
                 <div className="mx-auto mb-4 flex h-16 w-16 items-center justify-center rounded-full bg-orange-100 dark:bg-orange-500/20 border border-orange-200 dark:border-orange-500/30">
                   <BarChart3 className="h-8 w-8 text-orange-600 dark:text-orange-400" />
                 </div>
-                <CardTitle className="text-xl text-gray-900 dark:text-white">Continuous Improvement</CardTitle>
+                <CardTitle className="text-xl text-gray-900 dark:text-white min-h-[3.5rem] flex items-center justify-center">Continuous Improvement</CardTitle>
               </CardHeader>
               <CardContent>
                 <CardDescription className="text-gray-600 dark:text-gray-300">
@@ -421,7 +434,7 @@ export default function BanyanIntelligenceLanding() {
       </section>
 
       {/* Architecture Section */}
-      <section id="architecture" className="py-20 md:py-32 dotted-background-sparse relative">
+      <section id="architecture" className="py-12 md:py-20 dotted-background-sparse relative">
         <div className="absolute inset-0 bg-gradient-to-tr from-cyan-500/5 to-purple-500/5 dark:from-cyan-900/5 dark:to-purple-900/10" />
         <div className="container px-4 md:px-6 relative">
           <div className="text-center space-y-4 mb-16">
@@ -461,7 +474,7 @@ export default function BanyanIntelligenceLanding() {
       </section>
 
       {/* Blog Section */}
-      <section id="blog" className="py-20 md:py-32 bg-gray-50/50 dark:bg-gray-900/50 dotted-background-dense relative">
+      <section id="blog" className="py-12 md:py-20 bg-gray-50/50 dark:bg-gray-900/50 dotted-background-dense relative">
         <div className="absolute inset-0 bg-gradient-to-r from-cyan-500/5 to-purple-500/5 dark:from-cyan-900/10 dark:to-purple-900/10" />
         <div className="container px-4 md:px-6 relative">
           <div className="text-center space-y-4 mb-16">
@@ -553,7 +566,7 @@ export default function BanyanIntelligenceLanding() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 md:py-32 bg-gradient-to-br from-cyan-500/10 to-purple-500/10 dark:from-cyan-900/20 dark:to-purple-900/20 dotted-background relative">
+      <section className="py-16 md:py-24 bg-gradient-to-br from-cyan-500/10 to-purple-500/10 dark:from-cyan-900/20 dark:to-purple-900/20 dotted-background relative">
         <div className="absolute inset-0 bg-gradient-to-r from-cyan-500/5 to-purple-500/10 dark:from-cyan-900/10 dark:to-purple-900/15" />
         <div className="container px-4 md:px-6 text-center relative">
           <div className="max-w-3xl mx-auto space-y-8">
@@ -604,6 +617,9 @@ export default function BanyanIntelligenceLanding() {
                 </div>
                 <span className="text-xl font-bold text-gray-900">Banyan Intelligence</span>
               </div>
+              <div className="text-md text-gray-600">
+              AI Assistants for everyone at work
+              </div>
               <div className="text-sm text-gray-600">
                 <Link 
                   href="mailto:hello@banyanintelligence.com"
@@ -615,22 +631,27 @@ export default function BanyanIntelligenceLanding() {
              
             </div>
 
-            {/* Agents */}
-            <div className="space-y-4">
-              <h3 className="text-lg font-semibold text-gray-900">Agents</h3>
-              <ul className="space-y-2 text-gray-600">
-                <li>
-                  <Link href="https://ell3.ai/" className="hover:text-gray-900 transition-colors">
-                    ELL3
-                  </Link>
-                </li>
-                <li>
-                  <Link href="https://gobot.one/" className="hover:text-gray-900 transition-colors">
-                    GoBot
-                  </Link>
-                </li>
-              </ul>
-            </div>
+             {/* Agents */}
+          <div className="space-y-4">
+            <h3 className="text-lg font-semibold text-gray-900">Agents</h3>
+            <ul className="space-y-2 text-gray-600">
+              <li>
+                <Link href="https://ell3.ai/" className="hover:text-gray-900 transition-colors">
+                  ELL3 – Business Agent
+                </Link>
+              </li>
+              <li>
+                <Link href="https://ell3.ai/" className="hover:text-gray-900 transition-colors">
+                  ELL3 – Ops Agent
+                </Link>
+              </li>
+              <li>
+                <Link href="#" className="hover:text-gray-900 transition-colors">
+                  BICO Agent
+                </Link>
+              </li>
+            </ul>
+          </div>
 
             {/* Company */}
             <div className="space-y-4">
@@ -682,9 +703,7 @@ export default function BanyanIntelligenceLanding() {
                 <p className="text-sm text-gray-500">
                   &copy; {new Date().getFullYear()} banyanintelligence.com
                 </p>
-                <p className="text-sm text-gray-500 hidden md:block">
-AI Assistants for everyone at work
-                </p>
+                
               </div>
               
               {/* Social Links */}

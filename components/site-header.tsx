@@ -12,12 +12,12 @@ export default function SiteHeader() {
   return (
     <header className="sticky top-0 z-50 w-full border-b border-gray-200 dark:border-gray-800 bg-white/95 dark:bg-black/95 backdrop-blur supports-[backdrop-filter]:bg-white/60 dark:supports-[backdrop-filter]:bg-black/60">
       <div className="container flex h-16 items-center justify-between px-4 md:px-6">
-        <div className="flex items-center space-x-3">
+        <Link href="/" className="flex items-center space-x-3">
           <div className="flex h-10 w-10 items-center justify-center">
-            <Image src="/BI_logo-1cm[36].png" alt="Banyan Intelligence Logo" width={40} height={40} className="h-10 w-10 object-contain" />
+            <Image  src="/BI_logo-1cm[36].png" alt="Banyan Intelligence Logo" width={40} height={40} className="h-10 w-10 object-contain" />
           </div>
           <span className="text-lg md:text-xl font-bold text-gray-900 dark:text-white">Banyan Intelligence</span>
-        </div>
+        </Link>
 
         {/* Desktop Navigation */}
         <nav className="hidden md:flex items-center space-x-8">
@@ -26,6 +26,9 @@ export default function SiteHeader() {
           </Link>
           <Link href="/#architecture" className="text-sm font-medium text-gray-600 dark:text-gray-300 hover:text-cyan-500 dark:hover:text-cyan-400 transition-colors">
             Architecture
+          </Link>
+          <Link href="/about" className="text-sm font-medium text-gray-600 dark:text-gray-300 hover:text-cyan-500 dark:hover:text-cyan-400 transition-colors">
+            About
           </Link>
           <Link href="/blog" className="text-sm font-medium text-gray-600 dark:text-gray-300 hover:text-cyan-500 dark:hover:text-cyan-400 transition-colors">
             Blog
@@ -54,6 +57,9 @@ export default function SiteHeader() {
             </Link>
             <Link href="/#architecture" className="block text-base font-medium text-gray-600 dark:text-gray-300 hover:text-cyan-500 dark:hover:text-cyan-400 transition-colors py-2" onClick={() => setMobileMenuOpen(false)}>
               Architecture
+            </Link>
+            <Link href="/about" className="block text-base font-medium text-gray-600 dark:text-gray-300 hover:text-cyan-500 dark:hover:text-cyan-400 transition-colors py-2" onClick={() => setMobileMenuOpen(false)}>
+              About
             </Link>
             <Link href="/blog" className="block text-base font-medium text-gray-600 dark:text-gray-300 hover:text-cyan-500 dark:hover:text-cyan-400 transition-colors py-2" onClick={() => setMobileMenuOpen(false)}>
               Blog

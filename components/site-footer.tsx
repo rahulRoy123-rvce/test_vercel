@@ -29,12 +29,17 @@ export default function SiteFooter() {
             <ul className="space-y-2 text-gray-600">
               <li>
                 <Link href="https://ell3.ai/" className="hover:text-gray-900 transition-colors">
-                  ELL3
+                  ELL3 – Business Agent
                 </Link>
               </li>
               <li>
-                <Link href="https://gobot.one/" className="hover:text-gray-900 transition-colors">
-                  GoBot
+                <Link href="https://ell3.ai/" className="hover:text-gray-900 transition-colors">
+                  ELL3 – Ops Agent
+                </Link>
+              </li>
+              <li>
+                <Link href="#" className="hover:text-gray-900 transition-colors">
+                  BICO Agent
                 </Link>
               </li>
             </ul>

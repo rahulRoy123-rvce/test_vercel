@@ -38,7 +38,7 @@ export default function BlogPostPage({ params }: Props) {
           </div>
         </div>
 
-        <article className="prose prose-lg lg:prose-xl 2xl:prose-2xl dark:prose-invert text-justify max-w-none space-y-8">
+        <article className="prose prose-xl lg:prose-2xl 2xl:prose-2xl dark:prose-invert text-justify max-w-none space-y-10">
           {blogContents[post.slug]}
         </article>
 

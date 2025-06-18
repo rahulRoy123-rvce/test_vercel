@@ -136,7 +136,7 @@ export default function AgentCarouselSide() {
   }
 
   return (
-    <div className="relative max-w-6xl mx-auto">
+    <div className="relative max-w-7xl mx-auto px-2 sm:px-4">
       <div className="relative overflow-hidden rounded-2xl">
         <div
           className="flex transition-transform duration-700 ease-in-out"
@@ -166,26 +166,8 @@ export default function AgentCarouselSide() {
 
                   <CardContent className="p-4 sm:p-6 pt-0">
                     <div className="grid md:grid-cols-2 gap-6 items-start">
-                      {/* Left Column */}
-                      <div className="space-y-4">
-                        <p className="text-gray-700 dark:text-gray-300 text-base sm:text-lg leading-relaxed">
-                          {agent.description}
-                        </p>
-                        <div className="space-y-3">
-                          {agent.features.map((feat, idx) => (
-                            <div key={idx} className="flex items-start space-x-3">
-                              <CheckCircle className={`h-5 w-5 ${colors.checkColor} mt-1 flex-shrink-0`} />
-                              <div>
-                                <span className="font-semibold text-gray-900 dark:text-white">{feat.title}</span>
-                                <p className="text-sm text-gray-600 dark:text-gray-400">{feat.description}</p>
-                              </div>
-                            </div>
-                          ))}
-                        </div>
-                      </div>
-
-                      {/* Right Column */}
-                      <div className="w-full">
+                      {/* Video Column (left on md) */}
+                      <div className="w-full md:order-1 order-2">
                         <div className="aspect-video rounded-lg overflow-hidden border border-gray-200 dark:border-gray-600">
                           {agent.videoUrl ? (
                             <iframe
@@ -205,6 +187,24 @@ export default function AgentCarouselSide() {
                           )}
                         </div>
                       </div>
+
+                      {/* Text Column */}
+                      <div className="space-y-4 md:order-2 order-1">
+                        <p className="text-gray-700 dark:text-gray-300 text-base sm:text-lg leading-relaxed">
+                          {agent.description}
+                        </p>
+                        <div className="space-y-3">
+                          {agent.features.map((feat, idx) => (
+                            <div key={idx} className="flex items-start space-x-3">
+                              <CheckCircle className={`h-5 w-5 ${colors.checkColor} mt-1 flex-shrink-0`} />
+                              <div>
+                                <span className="font-semibold text-gray-900 dark:text-white">{feat.title}</span>
+                                <p className="text-sm text-gray-600 dark:text-gray-400">{feat.description}</p>
+                              </div>
+                            </div>
+                          ))}
+                        </div>
+                      </div>
                     </div>
                   </CardContent>
                 </Card>
@@ -218,7 +218,7 @@ export default function AgentCarouselSide() {
       <Button
         variant="outline"
         size="icon"
-        className="absolute -left-4 sm:-left-6 top-1/2 -translate-y-1/2 bg-cyan-100/80 dark:bg-gray-900/80 border-gray-300 dark:border-gray-600 text-gray-900 dark:text-white hover:bg-gray-50 dark:hover:bg-gray-800 backdrop-blur-sm z-10 h-8 w-8 sm:h-10 sm:w-10"
+        className="absolute -left-6 sm:-left-8 top-1/2 -translate-y-1/2 bg-cyan-100/80 dark:bg-gray-900/80 border-gray-300 dark:border-gray-600 text-gray-900 dark:text-white hover:bg-gray-50 dark:hover:bg-gray-800 backdrop-blur-sm z-10 h-8 w-8 sm:h-10 sm:w-10"
         onClick={prev}
       >
         <ChevronLeft className="h-4 w-4 sm:h-6 sm:w-6 text-cyan-500 dark:text-cyan-400" />
@@ -226,7 +226,7 @@ export default function AgentCarouselSide() {
       <Button
         variant="outline"
         size="icon"
-        className="absolute -right-4 sm:-right-6 top-1/2 -translate-y-1/2 bg-cyan-100/80 dark:bg-gray-900/80 border-gray-300 dark:border-gray-600 text-gray-900 dark:text-white hover:bg-gray-50 dark:hover:bg-gray-800 backdrop-blur-sm z-10 h-8 w-8 sm:h-10 sm:w-10"
+        className="absolute -right-6 sm:-right-8 top-1/2 -translate-y-1/2 bg-cyan-100/80 dark:bg-gray-900/80 border-gray-300 dark:border-gray-600 text-gray-900 dark:text-white hover:bg-gray-50 dark:hover:bg-gray-800 backdrop-blur-sm z-10 h-8 w-8 sm:h-10 sm:w-10"
         onClick={next}
       >
         <ChevronRight className="h-4 w-4 sm:h-6 sm:w-6 text-cyan-500 dark:text-cyan-400" />

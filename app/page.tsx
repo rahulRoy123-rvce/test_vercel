@@ -1,3 +1,6 @@
+"use client"
+
+import { useState } from "react"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
@@ -17,6 +20,8 @@ import {
   Clock,
   Youtube,
   Instagram,
+  Menu,
+  X,
 } from "lucide-react"
 import Link from "next/link"
 import Image from "next/image"
@@ -24,6 +29,8 @@ import AgentCarousel from "@/components/agent-carousel"
 import { ThemeToggle } from "@/components/theme-toggle"
 
 export default function BanyanIntelligenceLanding() {
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
+
   return (
     <div className="min-h-screen bg-white dark:bg-black text-gray-900 dark:text-white dotted-background">
       {/* Header */}
@@ -39,16 +46,11 @@ export default function BanyanIntelligenceLanding() {
                 className="h-10 w-10 object-contain"
               />
             </div>
-            <span className="text-xl font-bold text-gray-900 dark:text-white">Banyan Intelligence</span>
+            <span className="text-lg md:text-xl font-bold text-gray-900 dark:text-white">Banyan Intelligence</span>
           </div>
 
+          {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center space-x-8">
-            <Link
-              href="#vision"
-              className="text-sm font-medium text-gray-600 dark:text-gray-300 hover:text-cyan-500 dark:hover:text-cyan-400 transition-colors"
-            >
-              Vision
-            </Link>
             <Link
               href="#agents"
               className="text-sm font-medium text-gray-600 dark:text-gray-300 hover:text-cyan-500 dark:hover:text-cyan-400 transition-colors"
@@ -69,26 +71,73 @@ export default function BanyanIntelligenceLanding() {
             </Link>
           </nav>
 
-          <div className="flex items-center space-x-4">
+          <div className="flex items-center space-x-2 md:space-x-4">
             <ThemeToggle />
-            <Button className="bg-cyan-500 hover:bg-cyan-600 text-white font-semibold">Book Consultation</Button>
+            <Button className="hidden sm:flex bg-cyan-500 hover:bg-cyan-600 text-white font-semibold text-sm md:text-base px-4 md:px-6 py-2 md:py-3">
+              Book Consultation
+            </Button>
+            
+            {/* Mobile Menu Button */}
+            <Button
+              variant="ghost"
+              size="icon"
+              className="md:hidden"
+              onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+            >
+              {mobileMenuOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
+            </Button>
           </div>
         </div>
+
+        {/* Mobile Navigation Menu */}
+        {mobileMenuOpen && (
+          <div className="md:hidden border-t border-gray-200 dark:border-gray-800 bg-white/95 dark:bg-black/95 backdrop-blur">
+            <nav className="container px-4 py-4 space-y-4">
+              <Link
+                href="#agents"
+                className="block text-base font-medium text-gray-600 dark:text-gray-300 hover:text-cyan-500 dark:hover:text-cyan-400 transition-colors py-2"
+                onClick={() => setMobileMenuOpen(false)}
+              >
+                Our Agents
+              </Link>
+              <Link
+                href="#architecture"
+                className="block text-base font-medium text-gray-600 dark:text-gray-300 hover:text-cyan-500 dark:hover:text-cyan-400 transition-colors py-2"
+                onClick={() => setMobileMenuOpen(false)}
+              >
+                Architecture
+              </Link>
+              <Link
+                href="#blog"
+                className="block text-base font-medium text-gray-600 dark:text-gray-300 hover:text-cyan-500 dark:hover:text-cyan-400 transition-colors py-2"
+                onClick={() => setMobileMenuOpen(false)}
+              >
+                Blog
+              </Link>
+              <Button 
+                className="w-full sm:hidden bg-cyan-500 hover:bg-cyan-600 text-white font-semibold mt-4" 
+                onClick={() => setMobileMenuOpen(false)}
+              >
+                Book Consultation
+              </Button>
+            </nav>
+          </div>
+        )}
       </header>
 
       {/* Hero Section */}
-      <section className="py-20 md:py-32 relative overflow-hidden">
+      <section className="py-12 sm:py-20 md:py-32 relative overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-br from-cyan-500/10 to-purple-500/10 dark:from-cyan-900/20 dark:to-purple-900/20" />
         <div className="container px-4 md:px-6 relative">
-          <div className="max-w-4xl mx-auto text-center space-y-8">
-            <div className="space-y-6">
+          <div className="max-w-4xl mx-auto text-center space-y-6 md:space-y-8">
+            <div className="space-y-4 md:space-y-6">
               <Badge
                 variant="secondary"
-                className="bg-cyan-100 dark:bg-cyan-900/50 text-cyan-700 dark:text-cyan-300 border-cyan-200 dark:border-cyan-700"
+                className="bg-cyan-100 dark:bg-cyan-900/50 text-cyan-700 dark:text-cyan-300 border-cyan-200 dark:border-cyan-700 text-xs sm:text-sm"
               >
                 🤖 AI-Powered Workflow Transformation
               </Badge>
-              <h1 className="text-4xl font-bold tracking-tight sm:text-5xl md:text-6xl lg:text-7xl">
+              <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold tracking-tight">
                 <span className="text-gray-900 dark:text-white">AI Assistants for </span>
                 <span className="bg-gradient-to-r from-cyan-500 to-purple-500 dark:from-cyan-400 dark:to-purple-400 bg-clip-text text-transparent">
                 everyone
@@ -96,27 +145,27 @@ export default function BanyanIntelligenceLanding() {
                 <br />
                 <span className="text-gray-600 dark:text-gray-400"> at work </span>
               </h1>
-              <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto leading-relaxed">
+              <p className="text-lg sm:text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto leading-relaxed px-4 sm:px-0">
                 Transform your team's workflow with specialized AI agents that eliminate repetitive tasks and amplify
                 human capabilities, letting your experts focus on high-impact work.
               </p>
             </div>
 
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button size="lg" className="bg-cyan-500 hover:bg-cyan-600 text-white font-semibold text-lg px-8 py-6">
+            <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center px-4 sm:px-0">
+              <Button size="lg" className="bg-cyan-500 hover:bg-cyan-600 text-white font-semibold text-base sm:text-lg px-6 sm:px-8 py-4 sm:py-6">
                 Book Consultation
-                <ArrowRight className="ml-2 h-5 w-5" />
+                <ArrowRight className="ml-2 h-4 w-4 sm:h-5 sm:w-5" />
               </Button>
               <Button
                 variant="outline"
                 size="lg"
-                className="border-gray-300 dark:border-gray-600 text-gray-900 dark:text-white bg-white dark:bg-transparent hover:bg-gray-50 dark:hover:bg-gray-800 text-lg px-8 py-6"
+                className="border-gray-300 dark:border-gray-600 text-gray-900 dark:text-white bg-white dark:bg-transparent hover:bg-gray-50 dark:hover:bg-gray-800 text-base sm:text-lg px-6 sm:px-8 py-4 sm:py-6"
               >
                 Explore Our Agents
               </Button>
             </div>
 
-            <div className="flex items-center justify-center space-x-8 text-sm text-gray-500 dark:text-gray-400 pt-8">
+            <div className="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-8 text-sm text-gray-500 dark:text-gray-400 pt-8">
               <div className="flex items-center space-x-2">
                 <CheckCircle className="h-4 w-4 text-cyan-500 dark:text-cyan-400" />
                 <span>Specialized AI Agents</span>
@@ -181,6 +230,89 @@ export default function BanyanIntelligenceLanding() {
           </div>
 
           <AgentCarousel />
+        </div>
+      </section>
+
+      {/* ROP Analytical Bot Section */}
+      <section id="rop" className="py-20 md:py-32 dotted-background-cyan relative">
+        <div className="absolute inset-0 bg-gradient-to-br from-blue-500/5 to-blue-500/10 dark:from-blue-900/5 dark:to-blue-900/10" />
+        <div className="container px-4 md:px-6 relative">
+          <div className="text-center space-y-4 mb-16">
+            <Badge
+              variant="secondary"
+              className="bg-cyan-100 dark:bg-cyan-900/50 text-cyan-700 dark:text-cyan-300 border-cyan-200 dark:border-cyan-700"
+            >
+              Our Analytical Bot
+            </Badge>
+            <h2 className="text-3xl font-bold tracking-tight sm:text-4xl md:text-5xl text-gray-900 dark:text-white">
+              ROP Analytical Bot
+            </h2>
+            <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
+              Gain actionable insights into return on performance and key metrics across your organization with
+              ROP's advanced analytics capabilities.
+            </p>
+          </div>
+
+          <Card className="bg-white/80 dark:bg-gray-900/50 border-gray-200 dark:border-gray-700 mx-auto max-w-5xl backdrop-blur-sm">
+            <CardHeader className="pb-4 sm:pb-6 p-4 sm:p-6 text-center">
+              <div className="mx-auto mb-4 flex h-16 w-16 items-center justify-center rounded-full bg-cyan-100 dark:bg-cyan-500/20 border border-cyan-200 dark:border-cyan-500/30">
+                <BarChart3 className="h-8 w-8 text-cyan-600 dark:text-cyan-400" />
+              </div>
+              <CardTitle className="text-2xl sm:text-3xl text-gray-900 dark:text-white">ROP Analytical Bot</CardTitle>
+              <CardDescription className="text-gray-600 dark:text-gray-300 text-base sm:text-lg">
+                Unlock powerful analytics without the complexity.
+              </CardDescription>
+            </CardHeader>
+            <CardContent className="p-4 sm:p-6">
+              <div className="grid gap-6 md:grid-cols-2 items-center">
+                {/* Bullet List */}
+                <div className="space-y-4">
+                  {[
+                    {
+                      title: 'Performance Dashboards',
+                      description: 'Real-time dashboards highlighting ROI and efficiency KPIs',
+                    },
+                    {
+                      title: 'Predictive Analytics',
+                      description: 'Machine-learning models forecast future performance trends',
+                    },
+                    {
+                      title: 'Automated Reporting',
+                      description: 'Generates easy-to-share reports for stakeholders',
+                    },
+                    {
+                      title: 'Custom Alerts',
+                      description: 'Notifies you when metrics move outside desired thresholds',
+                    },
+                  ].map((feature, idx) => (
+                    <div key={idx} className="flex items-start space-x-3">
+                      <CheckCircle className="h-5 w-5 text-cyan-600 dark:text-cyan-400 mt-1 flex-shrink-0" />
+                      <div>
+                        <span className="font-semibold text-gray-900 dark:text-white">{feature.title}</span>
+                        <p className="text-sm text-gray-600 dark:text-gray-400">{feature.description}</p>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+
+                {/* Demo Image Placeholder */}
+                <div className="w-full">
+                  <div className="aspect-video rounded-lg overflow-hidden border border-gray-200 dark:border-gray-600">
+                    <iframe
+                      width="100%"
+                      height="100%"
+                      src="https://www.youtube.com/embed/ySABFzWJENw?si=ROPdemo&rel=0"
+                      title="ROP Analytical Bot Demo Video"
+                      frameBorder="0"
+                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                      allowFullScreen
+                      className="w-full h-full"
+                    />
+                  </div>
+                </div>
+              </div>
+            </CardContent>
+          </Card>
         </div>
       </section>
 
@@ -322,7 +454,7 @@ export default function BanyanIntelligenceLanding() {
             </p>
           </div>
 
-          <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3 max-w-6xl mx-auto">
+          <div className="grid gap-6 sm:gap-8 md:grid-cols-2 lg:grid-cols-3 max-w-6xl mx-auto">
             <Card className="bg-white/80 dark:bg-black/50 border-gray-200 dark:border-gray-700 hover:shadow-lg dark:hover:shadow-gray-700/20 transition-all duration-300 group">
               <div className="aspect-video bg-gradient-to-br from-cyan-100 to-cyan-200 dark:from-cyan-900/20 dark:to-cyan-700/20 rounded-t-lg border-b border-gray-200 dark:border-gray-600 relative overflow-hidden">
                 <div className="absolute inset-0 flex items-center justify-center">
@@ -461,6 +593,10 @@ export default function BanyanIntelligenceLanding() {
                 Learn More
               </Button>
             </div>
+            <h4 className="text-xl font-bold tracking-tight sm:text-xl md:text-xl text-gray-900 dark:text-white">
+            AI Assistants for everyone
+            at work
+            </h4>
           </div>
         </div>
       </section>
@@ -492,6 +628,11 @@ export default function BanyanIntelligenceLanding() {
                   hello@banyanintelligence.com
                 </Link>
               </div>
+              <div className="text-md text-gray-600">
+                
+                  AI Assistants for everyone at work
+                
+              </div>
             </div>
 
             {/* Agents */}
@@ -499,7 +640,7 @@ export default function BanyanIntelligenceLanding() {
               <h3 className="text-lg font-semibold text-gray-900">Agents</h3>
               <ul className="space-y-2 text-gray-600">
                 <li>
-                  <Link href="#" className="hover:text-gray-900 transition-colors">
+                  <Link href="https://ell3.ai/" className="hover:text-gray-900 transition-colors">
                     ELL3
                   </Link>
                 </li>

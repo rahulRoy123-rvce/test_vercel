@@ -170,41 +170,41 @@ export default function AgentCarousel() {
             const colors = colorClasses[agent.color as keyof typeof colorClasses]
 
             return (
-              <div key={agent.id} className="w-full flex-shrink-0 px-4">
+              <div key={agent.id} className="w-full flex-shrink-0 px-2 sm:px-4">
                 <Card
                   className={`bg-white/80 dark:bg-gray-900/50 border-gray-200 dark:border-gray-700 ${colors.border} ${colors.shadow} transition-all duration-300 mx-auto max-w-4xl`}
                 >
-                  <CardHeader className="pb-6">
-                    <div className="flex items-center space-x-4 mb-6">
-                      <div className={`flex h-16 w-16 items-center justify-center rounded-full ${colors.iconBg}`}>
-                        <Icon className={`h-8 w-8 ${colors.iconColor}`} />
+                  <CardHeader className="pb-4 sm:pb-6 p-4 sm:p-6">
+                    <div className="flex flex-col sm:flex-row items-start sm:items-center space-y-4 sm:space-y-0 sm:space-x-4 mb-4 sm:mb-6">
+                      <div className={`flex h-12 w-12 sm:h-16 sm:w-16 items-center justify-center rounded-full ${colors.iconBg} flex-shrink-0`}>
+                        <Icon className={`h-6 w-6 sm:h-8 sm:w-8 ${colors.iconColor}`} />
                       </div>
-                      <div>
-                        <CardTitle className="text-2xl text-gray-900 dark:text-white">{agent.title}</CardTitle>
-                        <CardDescription className="text-gray-600 dark:text-gray-400 text-lg">
+                      <div className="text-left sm:text-left w-full">
+                        <CardTitle className="text-xl sm:text-2xl text-gray-900 dark:text-white">{agent.title}</CardTitle>
+                        <CardDescription className="text-gray-600 dark:text-gray-400 text-base sm:text-lg">
                           {agent.subtitle}
                         </CardDescription>
                       </div>
                     </div>
-                    <p className="text-gray-700 dark:text-gray-300 text-lg leading-relaxed">{agent.description}</p>
+                    <p className="text-gray-700 dark:text-gray-300 text-base sm:text-lg leading-relaxed">{agent.description}</p>
                   </CardHeader>
 
-                  <CardContent className="space-y-6">
+                  <CardContent className="space-y-4 sm:space-y-6 p-4 sm:p-6">
                     {/* Features Grid */}
-                    <div className="grid gap-4 md:grid-cols-2">
+                    <div className="grid gap-3 sm:gap-4 md:grid-cols-2">
                       {agent.features.map((feature, featureIndex) => (
                         <div key={featureIndex} className="flex items-start space-x-3">
-                          <CheckCircle className={`h-5 w-5 ${colors.checkColor} mt-0.5 flex-shrink-0`} />
+                          <CheckCircle className={`h-4 w-4 sm:h-5 sm:w-5 ${colors.checkColor} mt-1 flex-shrink-0`} />
                           <div>
-                            <span className="font-semibold text-gray-900 dark:text-white">{feature.title}</span>
-                            <p className="text-sm text-gray-600 dark:text-gray-400">{feature.description}</p>
+                            <span className="font-semibold text-gray-900 dark:text-white text-sm sm:text-base">{feature.title}</span>
+                            <p className="text-xs sm:text-sm text-gray-600 dark:text-gray-400">{feature.description}</p>
                           </div>
                         </div>
                       ))}
                     </div>
 
                     {/* Demo Section */}
-                    <div className="mt-8 p-6 bg-gray-100/50 dark:bg-gray-800/50 rounded-xl border border-gray-200 dark:border-gray-600">
+                    <div className="mt-6 sm:mt-8 p-4 sm:p-6 bg-gray-100/50 dark:bg-gray-800/50 rounded-xl border border-gray-200 dark:border-gray-600">
                       {agent.videoUrl ? (
                         <div className="aspect-video rounded-lg overflow-hidden border border-gray-200 dark:border-gray-600">
                           <iframe 
@@ -247,19 +247,19 @@ export default function AgentCarousel() {
       <Button
         variant="outline"
         size="icon"
-        className="absolute left-4 top-1/2 -translate-y-1/2 bg-white/80 dark:bg-gray-900/80 border-gray-300 dark:border-gray-600 text-gray-900 dark:text-white hover:bg-gray-50 dark:hover:bg-gray-800 hover:border-cyan-500/50 backdrop-blur-sm z-10"
+        className="absolute left-2 sm:left-4 top-1/2 -translate-y-1/2 bg-cyan-100/80 dark:bg-gray-900/80 border-gray-300 dark:border-gray-600 text-gray-900 dark:text-white hover:bg-gray-50 dark:hover:bg-gray-800 hover:border-cyan-500/50 backdrop-blur-sm z-10 h-8 w-8 sm:h-10 sm:w-10"
         onClick={prevSlide}
       >
-        <ChevronLeft className="h-6 w-6" />
+        <ChevronLeft className="h-4 w-4 sm:h-6 sm:w-6 text-cyan-500 dark:text-cyan-900" />
       </Button>
 
       <Button
         variant="outline"
         size="icon"
-        className="absolute right-4 top-1/2 -translate-y-1/2 bg-white/80 dark:bg-gray-900/80 border-gray-300 dark:border-gray-600 text-gray-900 dark:text-white hover:bg-gray-50 dark:hover:bg-gray-800 hover:border-cyan-500/50 backdrop-blur-sm z-10"
+        className="absolute right-2 sm:right-4 top-1/2 -translate-y-1/2 bg-cyan-100/80 dark:bg-gray-900/80 border-gray-300 dark:border-gray-600 text-gray-900 dark:text-white hover:bg-gray-50 dark:hover:bg-gray-800 hover:border-cyan-500/50 backdrop-blur-sm z-10 h-8 w-8 sm:h-10 sm:w-10"
         onClick={nextSlide}
       >
-        <ChevronRight className="h-6 w-6" />
+        <ChevronRight className="h-4 w-4 sm:h-6 sm:w-6 text-cyan-500 dark:text-cyan-400" />
       </Button>
 
       {/* Slide Indicators */}

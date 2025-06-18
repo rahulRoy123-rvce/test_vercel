@@ -9,8 +9,28 @@ const config: Config = {
     "*.{js,ts,jsx,tsx,mdx}"
   ],
   theme: {
+  	container: {
+  		center: true,
+  		padding: "1rem",
+  		screens: {
+  			"2xl": "1400px",
+  		},
+  	},
   	extend: {
   		colors: {
+  			// Brand Blue override for previous cyan usages
+  			cyan: {
+  			  50: '#e1f6fe',
+  			  100: '#c3edfd',
+  			  200: '#87dafc',
+  			  300: '#4bc7fa',
+  			  400: '#0fb5f8',
+  			  500: '#09acf2',
+  			  600: '#089ad9',
+  			  700: '#067cac',
+  			  800: '#045d7f',
+  			  900: '#023d52',
+  			},
   			background: 'hsl(var(--background))',
   			foreground: 'hsl(var(--foreground))',
   			card: {

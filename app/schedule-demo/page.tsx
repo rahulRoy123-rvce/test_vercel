@@ -10,7 +10,7 @@ export default function ScheduleDemoPage() {
   return (
     <div>
       {/* Header/Navigation */}
-     <SiteHeader/>
+     
 
       <main className="relative text-white">
         <ContactForm />

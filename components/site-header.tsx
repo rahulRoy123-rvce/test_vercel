@@ -37,9 +37,11 @@ export default function SiteHeader() {
 
         <div className="flex items-center space-x-2 md:space-x-4">
           <ThemeToggle />
-          <Button className="hidden sm:flex bg-cyan-500 hover:bg-cyan-600 text-white font-semibold text-sm md:text-base px-4 md:px-6 py-2 md:py-3">
-            Book Consultation
-          </Button>
+          <Link href="/schedule-demo" className="hidden sm:flex">
+            <Button className="bg-cyan-500 hover:bg-cyan-600 text-white font-semibold text-sm md:text-base px-4 md:px-6 py-2 md:py-3">
+              Book Consultation
+            </Button>
+          </Link>
 
           {/* Mobile Menu Button */}
           <Button variant="ghost" size="icon" className="md:hidden" onClick={() => setMobileMenuOpen(!mobileMenuOpen)}>
@@ -64,9 +66,11 @@ export default function SiteHeader() {
             <Link href="/blog" className="block text-base font-medium text-gray-600 dark:text-gray-300 hover:text-cyan-500 dark:hover:text-cyan-400 transition-colors py-2" onClick={() => setMobileMenuOpen(false)}>
               Blog
             </Link>
-            <Button className="w-full sm:hidden bg-cyan-500 hover:bg-cyan-600 text-white font-semibold mt-4" onClick={() => setMobileMenuOpen(false)}>
-              Book Consultation
-            </Button>
+            <Link href="/schedule-demo" onClick={() => setMobileMenuOpen(false)} className="w-full sm:hidden">
+              <Button className="w-full bg-cyan-500 hover:bg-cyan-600 text-white font-semibold mt-4">
+                Book Consultation
+              </Button>
+            </Link>
           </nav>
         </div>
       )}

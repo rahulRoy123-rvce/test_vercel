@@ -1,10 +1,10 @@
 import Image from "next/image"
 import Link from "next/link"
-import { Button } from "@/components/ui/button"
+import SubscribeForm from "./subscribe-form"
 
 export default function SiteFooter() {
   return (
-    <footer className="bg-white border-t border-gray-200 py-16">
+    <footer className="bg-white dark:bg-black border-t border-gray-200 dark:border-gray-800 py-16 text-gray-900 dark:text-white">
       <div className="container px-4 md:px-6">
         <div className="grid gap-8 lg:grid-cols-4">
           {/* Company Info */}
@@ -13,20 +13,20 @@ export default function SiteFooter() {
               <div className="flex h-10 w-10 items-center justify-center">
                 <Image src="/BI_logo-1cm[36].png" alt="Banyan Intelligence Logo" width={40} height={40} className="h-10 w-10 object-contain" />
               </div>
-              <span className="text-xl font-bold text-gray-900">Banyan Intelligence</span>
+              <span className="text-xl font-bold text-gray-900 dark:text-white">Banyan Intelligence</span>
             </div>
-            <div className="text-sm text-gray-600">
+            <div className="text-sm text-gray-600 dark:text-white">
               <Link href="mailto:hello@banyanintelligence.com" className="hover:text-gray-900 transition-colors">
                 hello@banyanintelligence.com
               </Link>
             </div>
-            <div className="text-md text-gray-600">AI Assistants for everyone at work</div>
+            <div className="text-md text-white">AI Assistants for everyone at work</div>
           </div>
 
           {/* Agents */}
           <div className="space-y-4">
-            <h3 className="text-lg font-semibold text-gray-900">Agents</h3>
-            <ul className="space-y-2 text-gray-600">
+            <h3 className="text-lg font-semibold text-gray-900 dark:text-white">Agents</h3>
+            <ul className="space-y-2 text-gray-600 dark:text-gray-400">
               <li>
                 <Link href="https://ell3.ai/" className="hover:text-gray-900 transition-colors">
                   ELL3 – Business Agent
@@ -47,8 +47,8 @@ export default function SiteFooter() {
 
           {/* Company */}
           <div className="space-y-4">
-            <h3 className="text-lg font-semibold text-gray-900">Company</h3>
-            <ul className="space-y-2 text-gray-600">
+            <h3 className="text-lg font-semibold text-gray-900 dark:text-white">Company</h3>
+            <ul className="space-y-2 text-gray-600 dark:text-gray-400">
               <li>
                 <Link href="/blog" className="hover:text-gray-900 transition-colors">
                   Blog
@@ -69,16 +69,11 @@ export default function SiteFooter() {
 
           {/* Subscribe */}
           <div className="space-y-4">
-            <h3 className="text-lg font-semibold text-gray-900">Subscribe</h3>
-            <p className="text-sm text-gray-600">
+            <h3 className="text-lg font-semibold text-gray-900 dark:text-white">Subscribe</h3>
+            <p className="text-sm text-gray-600 dark:text-gray-400">
               We're expanding our suite of AI agents to address more workplace challenges. Sign up for our newsletter to be the first to know about new solutions.
             </p>
-            <div className="flex space-x-2">
-              <input type="email" placeholder="Enter your email" className="flex-1 px-3 py-2 border border-gray-300 rounded-md text-gray-900 placeholder-gray-500 focus:outline-none focus:border-gray-400 focus:ring-1 focus:ring-gray-400 transition-colors" />
-              <Button className="bg-blue-900 hover:bg-blue-800 text-white font-medium px-6 py-2 transition-all duration-300">
-                Submit
-              </Button>
-            </div>
+            <SubscribeForm />
           </div>
         </div>
 

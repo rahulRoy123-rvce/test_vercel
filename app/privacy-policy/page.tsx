@@ -13,7 +13,7 @@ export default function PrivacyPolicyPage() {
       <div className="container px-4 md:px-8 max-w-5xl mx-auto space-y-10">
         <div className="text-center space-y-4">
           <Badge variant="secondary" className="bg-cyan-100 dark:bg-cyan-900/50 text-cyan-700 dark:text-cyan-300 border-cyan-200 dark:border-cyan-700">
-            Last updated: May&nbsp;1,&nbsp;2025
+            Last updated: June&nbsp;19,&nbsp;2025
           </Badge>
           <h1 className="text-4xl font-bold">Privacy Policy</h1>
           <p className="text-gray-600 dark:text-gray-300 max-w-xl mx-auto">

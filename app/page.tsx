@@ -59,16 +59,16 @@ export default function BanyanIntelligenceLanding() {
               Our Agents
             </Link>
             <Link
+              href="#why-choose-us"
+              className="text-sm font-medium text-gray-600 dark:text-gray-300 hover:text-cyan-500 dark:hover:text-cyan-400 transition-colors"
+            >
+              Why us?
+            </Link>
+            <Link
               href="#architecture"
               className="text-sm font-medium text-gray-600 dark:text-gray-300 hover:text-cyan-500 dark:hover:text-cyan-400 transition-colors"
             >
               Architecture
-            </Link>
-            <Link
-              href="#blog"
-              className="text-sm font-medium text-gray-600 dark:text-gray-300 hover:text-cyan-500 dark:hover:text-cyan-400 transition-colors"
-            >
-              Blog
             </Link>
             <Link
               href="/about"
@@ -76,13 +76,23 @@ export default function BanyanIntelligenceLanding() {
             >
               About
             </Link>
+            <Link
+              href="#blog"
+              className="text-sm font-medium text-gray-600 dark:text-gray-300 hover:text-cyan-500 dark:hover:text-cyan-400 transition-colors"
+            >
+              Blog
+            </Link>
+            
           </nav>
 
           <div className="flex items-center space-x-2 md:space-x-4">
             <ThemeToggle />
-            <Button className="hidden sm:flex bg-cyan-500 hover:bg-cyan-600 text-white font-semibold text-sm md:text-base px-4 md:px-6 py-2 md:py-3">
-              Book Consultation
-            </Button>
+            <Link href="/schedule-demo">
+              <Button size="sm" className="bg-cyan-500 hover:bg-cyan-600 text-white font-semibold text-base sm:text-lg px-6 sm:px-8 py-4 sm:py-6">
+                Book Consultation
+                <ArrowRight className="ml-2 h-4 w-4 sm:h-5 sm:w-5" />
+              </Button>
+            </Link>
             
             {/* Mobile Menu Button */}
             <Button
@@ -128,12 +138,14 @@ export default function BanyanIntelligenceLanding() {
               >
                 About
               </Link>
-              <Button 
-                className="w-full sm:hidden bg-cyan-500 hover:bg-cyan-600 text-white font-semibold mt-4" 
-                onClick={() => setMobileMenuOpen(false)}
-              >
-                Book Consultation
-              </Button>
+              <Link href="/schedule-demo">
+                <Button 
+                  className="w-full sm:hidden bg-cyan-500 hover:bg-cyan-600 text-white font-semibold mt-4" 
+                  onClick={() => setMobileMenuOpen(false)}
+                >
+                  Book Consultation
+                </Button>
+              </Link>
             </nav>
           </div>
         )}
@@ -166,16 +178,18 @@ export default function BanyanIntelligenceLanding() {
             </div>
 
             <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center px-4 sm:px-0">
-              <Button size="lg" className="bg-cyan-500 hover:bg-cyan-600 text-white font-semibold text-base sm:text-lg px-6 sm:px-8 py-4 sm:py-6">
-                Book Consultation
-                <ArrowRight className="ml-2 h-4 w-4 sm:h-5 sm:w-5" />
-              </Button>
+              <Link href="/schedule-demo">
+                <Button size="lg" className="bg-cyan-500 hover:bg-cyan-600 text-white font-semibold text-base sm:text-lg px-6 sm:px-8 py-4 sm:py-6">
+                  Book Consultation
+                  <ArrowRight className="ml-2 h-4 w-4 sm:h-5 sm:w-5" />
+                </Button>
+              </Link>
               <Button
                 variant="outline"
                 size="lg"
                 className="border-gray-300 dark:border-gray-600 text-gray-900 dark:text-white bg-white dark:bg-transparent hover:bg-gray-50 dark:hover:bg-gray-800 text-base sm:text-lg px-6 sm:px-8 py-4 sm:py-6"
               >
-                Explore Our Agents
+                Explore Our Solutions
               </Button>
             </div>
 
@@ -248,7 +262,7 @@ export default function BanyanIntelligenceLanding() {
       </section>*/}
 
       {/* Agent Detailed Demos Section */}
-      <section id="agent-demos" className="py-12 md:py-20 dotted-background-cyan relative">
+      <section id="agent-demos" className="py-6 md:py-10 dotted-background-cyan relative">
         <div className="absolute inset-0 bg-gradient-to-br from-cyan-500/5 to-purple-500/5 dark:from-cyan-900/5 dark:to-purple-900/5" />
         <div className="container px-4 md:px-6 relative">
           <div className="text-center space-y-4 mb-16">
@@ -259,7 +273,7 @@ export default function BanyanIntelligenceLanding() {
               Our Solutions
             </Badge>
             <h2 className="text-3xl font-bold tracking-tight sm:text-4xl md:text-5xl text-gray-900 dark:text-white">
-            Our Agents in action   
+            Our Agents in Action   
             </h2>
             <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
             Specialized agents designed to eliminate toil and amplify human capabilities across different domains.
@@ -272,10 +286,10 @@ export default function BanyanIntelligenceLanding() {
       </section>
 
       {/* ROP Analytical Bot Section */}
-      <section id="rop" className="py-12 md:py-20 dotted-background-cyan relative">
+      <section id="rop" className="py-6 md:py-10 dotted-background-cyan relative">
         <div className="absolute inset-0 bg-gradient-to-br from-blue-500/5 to-blue-500/10 dark:from-blue-900/5 dark:to-blue-900/10" />
         <div className="container px-4 md:px-6 relative">
-          <div className="text-center space-y-4 mb-16">
+          <div className="text-center px-4 md:px-4 space-y-4 mb-16">
             <Badge
               variant="secondary"
               className="bg-cyan-100 dark:bg-cyan-900/50 text-cyan-700 dark:text-cyan-300 border-cyan-200 dark:border-cyan-700"
@@ -290,7 +304,7 @@ export default function BanyanIntelligenceLanding() {
             </p>
           </div>
 
-          <Card className="bg-white/80 dark:bg-gray-900/50 border-gray-200 dark:border-gray-700 mx-auto max-w-5xl backdrop-blur-sm">
+          <Card className="bg-white/80 dark:bg-gray-900/50 border-gray-200 dark:border-gray-700 mx-auto max-w-5xl backdrop-blur-sm px-8 md:px-6 py-8 md:py-6">
             <CardHeader className="pb-4 sm:pb-6 p-4 sm:p-6 text-center">
               <div className="mx-auto mb-4 flex h-16 w-16 items-center justify-center rounded-full bg-cyan-100 dark:bg-cyan-500/20 border border-cyan-200 dark:border-cyan-500/30">
                 <BarChart3 className="h-8 w-8 text-cyan-600 dark:text-cyan-400" />
@@ -300,8 +314,8 @@ export default function BanyanIntelligenceLanding() {
                 Unlock deep insights into your radio network with enterprise-grade observability.
               </CardDescription>
             </CardHeader>
-            <CardContent className="p-4 sm:p-6">
-              <div className="grid gap-6 md:grid-cols-2 items-center">
+            <CardContent className="p-6 sm:p-8 pb-8 sm:pb-10">
+              <div className="grid gap-6 md:grid-cols-2 items-start">
                 {/* Bullet List */}
                 <div className="space-y-4 md:order-2 order-2">
                   {[
@@ -337,14 +351,16 @@ export default function BanyanIntelligenceLanding() {
                 </div>
 
                 {/* Demo Image */}
-                <div className="w-full md:order-1 order-1">
-                  <div className="aspect-video rounded-lg overflow-hidden border border-gray-200 dark:border-gray-600 relative">
+                <div className="w-full md:order-1 order-1 h-full flex items-stretch">
+                  <div className="rounded-lg border border-gray-200 dark:border-gray-600 bg-white/60 dark:bg-gray-800/40 p-4 flex items-center justify-center w-full">
                     <Image
                       src="/rop.jpg"
                       alt="ROP Platform dashboard"
-                      fill
-                      className="object-cover"
+                      className="object-contain w-full h-full"
+                      width={800}
+                      height={600}
                       sizes="(max-width: 768px) 100vw, 50vw"
+                      priority
                     />
                   </div>
                 </div>
@@ -355,7 +371,7 @@ export default function BanyanIntelligenceLanding() {
       </section>
 
       {/* Why Choose Banyan Section */}
-      <section className="py-12 md:py-20 bg-gray-50/50 dark:bg-gray-900/50 dotted-background-purple relative">
+      <section id="why-choose-us" className="py-12 md:py-20 bg-gray-50/50 dark:bg-gray-900/50 dotted-background-purple relative">
         <div className="absolute inset-0 bg-gradient-to-l from-purple-500/5 to-green-500/5 dark:from-purple-900/10 dark:to-green-900/5" />
         <div className="container px-4 md:px-6 relative">
           <div className="text-center space-y-4 mb-16">
@@ -415,7 +431,7 @@ export default function BanyanIntelligenceLanding() {
               </CardContent>
             </Card>
 
-            <Card className="bg-white/80 dark:bg-black/50 border-gray-200 dark:border-gray-700 text-center backdrop-blur-sm">
+            <Card className="bg-white/80 dark:bg-black/50 border-gray-200 dark:border-gray-700 dark:text-gray-300 text-center backdrop-blur-sm">
               <CardHeader className="pb-4">
                 <div className="mx-auto mb-4 flex h-16 w-16 items-center justify-center rounded-full bg-orange-100 dark:bg-orange-500/20 border border-orange-200 dark:border-orange-500/30">
                   <BarChart3 className="h-8 w-8 text-orange-600 dark:text-orange-400" />
@@ -578,10 +594,12 @@ export default function BanyanIntelligenceLanding() {
               your specific challenges.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button size="lg" className="bg-cyan-500 hover:bg-cyan-600 text-white font-semibold text-lg px-8 py-6">
-                Book a Consultation
-                <Calendar className="ml-2 h-5 w-5" />
-              </Button>
+              <Link href="/schedule-demo">
+                <Button size="lg" className="bg-cyan-500 hover:bg-cyan-600 text-white font-semibold text-lg px-8 py-6">
+                  Book a Consultation
+                  <Calendar className="ml-2 h-5 w-5" />
+                </Button>
+              </Link>
               <Button
                 variant="outline"
                 size="lg"
@@ -599,7 +617,7 @@ export default function BanyanIntelligenceLanding() {
       </section>
 
       {/* Footer */}
-      <footer className="bg-white border-t border-gray-200 py-16">
+      <footer className="bg-white dark:bg-black dark:text-white border-t border-gray-200 dark:border-gray-800 py-16">
         <div className="container px-4 md:px-6">
           {/* Main Footer Content */}
           <div className="grid gap-8 lg:grid-cols-4">
@@ -615,15 +633,15 @@ export default function BanyanIntelligenceLanding() {
                     className="h-10 w-10 object-contain"
                   />
                 </div>
-                <span className="text-xl font-bold text-gray-900">Banyan Intelligence</span>
+                <span className="text-xl font-bold dark:bg-black dark:text-white">Banyan Intelligence</span>
               </div>
-              <div className="text-md text-gray-600">
+              <div className="text-md dark:bg-black dark:text-white">
               AI Assistants for everyone at work
               </div>
-              <div className="text-sm text-gray-600">
+              <div className="text-sm dark:bg-black dark:text-white">
                 <Link 
                   href="mailto:hello@banyanintelligence.com"
-                  className="hover:text-gray-900 transition-colors"
+                  className="hover:text-gray-900 dark:bg-black dark:text-white transition-colors"
                 >
                   hello@banyanintelligence.com
                 </Link>
@@ -632,21 +650,21 @@ export default function BanyanIntelligenceLanding() {
             </div>
 
              {/* Agents */}
-          <div className="space-y-4">
-            <h3 className="text-lg font-semibold text-gray-900">Agents</h3>
-            <ul className="space-y-2 text-gray-600">
+          <div className="space-y-4 dark:bg-black dark:text-white">
+            <h3 className="text-lg font-semibold dark:bg-black dark:text-white">Agents</h3>
+            <ul className="space-y-2 dark:bg-black dark:text-white">
               <li>
-                <Link href="https://ell3.ai/" className="hover:text-gray-900 transition-colors">
+                <Link href="https://ell3.ai/" className="hover:text-gray-900 dark:bg-black dark:text-white transition-colors">
                   ELL3 – Business Agent
                 </Link>
               </li>
               <li>
-                <Link href="https://ell3.ai/" className="hover:text-gray-900 transition-colors">
+                <Link href="https://ell3.ai/" className="hover:text-gray-900 dark:bg-black dark:text-white transition-colors">
                   ELL3 – Ops Agent
                 </Link>
               </li>
               <li>
-                <Link href="#" className="hover:text-gray-900 transition-colors">
+                <Link href="#" className="hover:text-gray-900 dark:bg-black dark:text-white transition-colors">
                   BICO Agent
                 </Link>
               </li>
@@ -655,20 +673,20 @@ export default function BanyanIntelligenceLanding() {
 
             {/* Company */}
             <div className="space-y-4">
-              <h3 className="text-lg font-semibold text-gray-900">Company</h3>
+              <h3 className="text-lg font-semibold dark:bg-black dark:text-white">Company</h3>
               <ul className="space-y-2 text-gray-600">
                 <li>
-                  <Link href="#blog" className="hover:text-gray-900 transition-colors">
+                  <Link href="#blog" className="hover:text-gray-900 dark:bg-black dark:text-white transition-colors">
                     Blog
                   </Link>
                 </li>
                 <li>
-                  <Link href="/privacy-policy" className="hover:text-gray-900 transition-colors">
+                  <Link href="/privacy-policy" className="hover:text-gray-900 dark:bg-black dark:text-white transition-colors">
                     Privacy Policy
                   </Link>
                 </li>
                 <li>
-                  <Link href="/terms-of-service" className="hover:text-gray-900 transition-colors">
+                  <Link href="/terms-of-service" className="hover:text-gray-900 dark:bg-black dark:text-white transition-colors">
                     Terms of Service
                   </Link>
                 </li>
@@ -677,8 +695,8 @@ export default function BanyanIntelligenceLanding() {
 
             {/* Subscribe */}
             <div className="space-y-4">
-              <h3 className="text-lg font-semibold text-gray-900">Subscribe</h3>
-              <p className="text-sm text-gray-600">
+              <h3 className="text-lg font-semibold  dark:bg-black dark:text-white">Subscribe</h3>
+              <p className="text-sm dark:bg-black dark:text-white">
                 We're expanding our suite of AI agents to address more workplace challenges. Sign up for our newsletter to be the first to know about new solutions.
               </p>
               <div className="flex space-x-2">
@@ -700,7 +718,7 @@ export default function BanyanIntelligenceLanding() {
           <div className="border-t border-gray-200 mt-12 pt-8">
             <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
               <div className="flex items-center space-x-4">
-                <p className="text-sm text-gray-500">
+                <p className="text-sm dark:bg-black dark:text-white">
                   &copy; {new Date().getFullYear()} banyanintelligence.com
                 </p>
                 
@@ -712,7 +730,7 @@ export default function BanyanIntelligenceLanding() {
                   href="https://www.linkedin.com/company/banyan-intelligence/posts/?feedView=all"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-gray-500 hover:text-gray-700 transition-colors"
+                  className="dark:bg-black dark:text-white hover:text-gray-700 transition-colors"
                 >
                   LinkedIn
                 </Link>
@@ -720,7 +738,7 @@ export default function BanyanIntelligenceLanding() {
                   href="https://x.com/BanyanIntel"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-gray-500 hover:text-gray-700 transition-colors"
+                  className="dark:bg-black dark:text-white hover:text-gray-700 transition-colors"
                 >
                   X
                 </Link>
@@ -728,7 +746,7 @@ export default function BanyanIntelligenceLanding() {
                   href="https://www.instagram.com/banyanintelligence/"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-gray-500 hover:text-gray-700 transition-colors"
+                  className="dark:bg-black dark:text-white hover:text-gray-700 transition-colors"
                 >
                   Instagram
                 </Link>
@@ -736,7 +754,7 @@ export default function BanyanIntelligenceLanding() {
                   href="https://www.youtube.com/@BanyanIntelligence"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-gray-500 hover:text-gray-700 transition-colors"
+                  className="dark:bg-black dark:text-white hover:text-gray-700 transition-colors"
                 >
                   Youtube
                 </Link>
@@ -745,6 +763,13 @@ export default function BanyanIntelligenceLanding() {
           </div>
         </div>
       </footer>
+
+      {/* Back to Top Button */}
+      <Link href="#" className="fixed bottom-6 right-6 z-40 group">
+        <button aria-label="Back to top" className="bg-cyan-500 hover:bg-cyan-600 text-white p-3 rounded-full shadow-lg transition-transform transform group-hover:-translate-y-1">
+          <ArrowRight className="h-5 w-5 rotate-[-90deg]" />
+        </button>
+      </Link>
     </div>
   )
 }

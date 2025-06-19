@@ -3,8 +3,9 @@
 import { useState, useEffect } from "react"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
-import { CheckCircle, ChevronLeft, ChevronRight } from "lucide-react"
+import { CheckCircle, ChevronLeft, ChevronRight, Play, Pause } from "lucide-react"
 import { MessageSquare, BarChart3, Search } from "lucide-react"
+import Link from "next/link"
 
 // Reuse the same agents array as original carousel
 const agents = [
@@ -148,8 +149,13 @@ export default function AgentCarouselSide() {
             return (
               <div key={agent.id} className="w-full flex-shrink-0 px-2 sm:px-4">
                 <Card
-                  className={`bg-white/80 dark:bg-gray-900/50 border-gray-200 dark:border-gray-700 ${colors.border} transition-all duration-300`}
+                  className={`relative bg-white/80 dark:bg-gray-900/50 border-gray-200 dark:border-gray-700 ${colors.border} transition-all duration-300`}
                 >
+                  {agent.id.includes('ops-agent') || agent.id.includes('business-agent') ? (
+                    <Link href="https://ell3.ai/" target="_blank" rel="noopener noreferrer" className="absolute top-4 right-4 bg-white text-cyan-600 border border-cyan-500 hover:bg-cyan-50 font-semibold text-sm px-4 py-2 rounded-full shadow">
+                      Try Now
+                    </Link>
+                  ) : null}
                   <CardHeader className="p-4 sm:p-6 pb-4">
                     <div className="flex items-center space-x-4 mb-6">
                       <div className={`flex h-12 w-12 items-center justify-center rounded-full ${colors.iconBg} flex-shrink-0`}>
@@ -232,7 +238,7 @@ export default function AgentCarouselSide() {
         <ChevronRight className="h-4 w-4 sm:h-6 sm:w-6 text-cyan-500 dark:text-cyan-400" />
       </Button>
 
-      <div className="flex justify-center space-x-3 mt-8">
+      <div className="flex justify-center space-x-3 mt-4">
         {agents.map((_, i) => (
           <button
             key={i}
@@ -248,7 +254,7 @@ export default function AgentCarouselSide() {
       </div>
 
       {/* Progress bar */}
-      <div className="mt-6 w-full bg-gray-300 dark:bg-gray-700 rounded-full h-1 overflow-hidden">
+      <div className="mt-4 w-full bg-gray-300 dark:bg-gray-700 rounded-full h-1 overflow-hidden">
         <div
           className="h-full bg-gradient-to-r from-cyan-500 to-purple-500 dark:from-cyan-400 dark:to-purple-400 transition-all duration-300 ease-out"
           style={{ width: `${((current + 1) / agents.length) * 100}%` }}
@@ -256,14 +262,19 @@ export default function AgentCarouselSide() {
       </div>
 
       {/* Auto-play control */}
-      <div className="flex justify-center mt-4">
+      <div className="flex justify-center mt-2">
         <Button
           variant="ghost"
-          size="sm"
+          size="icon"
+          aria-label={auto ? "Pause Auto-play" : "Resume Auto-play"}
           className="text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white"
           onClick={() => setAuto(!auto)}
         >
-          {auto ? "Pause Auto-play" : "Resume Auto-play"}
+          {auto ? (
+            <Pause className="h-4 w-4" />
+          ) : (
+            <Play className="h-4 w-4" />
+          )}
         </Button>
       </div>
     </div>

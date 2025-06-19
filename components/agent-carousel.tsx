@@ -3,7 +3,7 @@
 import { useState, useEffect } from "react"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
-import { MessageSquare, BarChart3, Search, CheckCircle, ChevronLeft, ChevronRight } from "lucide-react"
+import { MessageSquare, BarChart3, Search, CheckCircle, ChevronLeft, ChevronRight, Play, Pause } from "lucide-react"
 
 const agents = [
   {
@@ -289,11 +289,16 @@ export default function AgentCarousel() {
       <div className="flex justify-center mt-4">
         <Button
           variant="ghost"
-          size="sm"
+          size="icon"
+          aria-label={isAutoPlaying ? "Pause Auto-play" : "Resume Auto-play"}
           className="text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white"
           onClick={() => setIsAutoPlaying(!isAutoPlaying)}
         >
-          {isAutoPlaying ? "Pause Auto-play" : "Resume Auto-play"}
+          {isAutoPlaying ? (
+            <Pause className="h-4 w-4" />
+          ) : (
+            <Play className="h-4 w-4" />
+          )}
         </Button>
       </div>
     </div>

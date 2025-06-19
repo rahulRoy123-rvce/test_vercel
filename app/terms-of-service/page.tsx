@@ -13,7 +13,7 @@ export default function TermsOfServicePage() {
       <div className="container px-4 md:px-8 max-w-5xl mx-auto space-y-10">
         <div className="text-center space-y-4">
           <Badge variant="secondary" className="bg-purple-100 dark:bg-purple-900/50 text-purple-700 dark:text-purple-300 border-purple-200 dark:border-purple-700">
-            Last updated: Mar&nbsp;20,&nbsp;2024
+            Last updated: June&nbsp;19,&nbsp;2025
           </Badge>
           <h1 className="text-4xl font-bold">Terms of Service</h1>
           <p className="text-gray-600 dark:text-gray-300 max-w-xl mx-auto">

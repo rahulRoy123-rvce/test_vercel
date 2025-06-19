@@ -354,7 +354,7 @@ export default function BanyanIntelligenceLanding() {
               <div className="relative bg-white/90 dark:bg-gray-900/80 backdrop-blur-sm rounded-lg border border-gray-200 dark:border-gray-700 p-8 transform perspective-1000 hover:rotateX-2 hover:rotateY-2 transition-transform duration-300">
                 <div className="relative transform-gpu">
                   <Image
-                    src="/Ell3ArchitectureSketch.png"
+                    src="/public/ELL3ArchitectureSketch.png"
                     alt="Banyan Intelligence Architecture Diagram"
                     width={1200}
                     height={800}

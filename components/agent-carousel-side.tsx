@@ -151,8 +151,22 @@ export default function AgentCarouselSide() {
                 <Card
                   className={`relative bg-white/80 dark:bg-gray-900/50 border-gray-200 dark:border-gray-700 ${colors.border} transition-all duration-300`}
                 >
-                  {agent.id.includes('ops-agent') || agent.id.includes('business-agent') ? (
-                    <Link href="https://ell3.ai/" target="_blank" rel="noopener noreferrer" className="absolute top-4 right-4 bg-white text-cyan-600 border border-cyan-500 hover:bg-cyan-50 font-semibold text-sm px-4 py-2 rounded-full shadow">
+                  {agent.id.includes('ops-agent') ? (
+                    <Link
+                      href="https://ops-agent.ell3.ai/"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="absolute top-4 right-4 bg-white text-cyan-600 border border-cyan-500 hover:bg-cyan-50 font-semibold text-sm px-4 py-2 rounded-full shadow"
+                    >
+                      Try Now
+                    </Link>
+                  ) : agent.id.includes('business-agent') ? (
+                    <Link
+                      href="https://ell3.ai/"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="absolute top-4 right-4 bg-white text-cyan-600 border border-cyan-500 hover:bg-cyan-50 font-semibold text-sm px-4 py-2 rounded-full shadow"
+                    >
                       Try Now
                     </Link>
                   ) : null}

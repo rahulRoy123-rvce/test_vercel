@@ -1,6 +1,5 @@
 "use client"
 
-import { useState } from "react"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
@@ -20,8 +19,6 @@ import {
   Clock,
   Youtube,
   Instagram,
-  Menu,
-  X,
 } from "lucide-react"
 import Link from "next/link"
 import Image from "next/image"
@@ -30,126 +27,9 @@ import { ThemeToggle } from "@/components/theme-toggle"
 import AgentCarouselSide from "@/components/agent-carousel-side"
 
 export default function BanyanIntelligenceLanding() {
-  const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
-
   return (
     <div className="min-h-screen bg-white dark:bg-black text-gray-900 dark:text-white dotted-background">
-      {/* Header */}
-      <header className="sticky top-0 z-50 w-full border-b border-gray-200 dark:border-gray-800 bg-white/95 dark:bg-black/95 backdrop-blur supports-[backdrop-filter]:bg-white/60 dark:supports-[backdrop-filter]:bg-black/60">
-        <div className="container flex h-16 items-center justify-between px-4 md:px-6">
-          <div className="flex items-center space-x-3">
-            <div className="flex h-10 w-10 items-center justify-center">
-              <Image 
-                src="/BI_logo-1cm[36].png" 
-                alt="Banyan Intelligence Logo" 
-                width={40} 
-                height={40} 
-                className="h-10 w-10 object-contain"
-              />
-            </div>
-            <span className="text-lg md:text-xl font-bold text-gray-900 dark:text-white">Banyan Intelligence</span>
-          </div>
-
-          {/* Desktop Navigation */}
-          <nav className="hidden md:flex items-center space-x-8">
-            <Link
-              href="#agents"
-              className="text-sm font-medium text-gray-600 dark:text-gray-300 hover:text-cyan-500 dark:hover:text-cyan-400 transition-colors"
-            >
-              Our Agents
-            </Link>
-            <Link
-              href="#why-choose-us"
-              className="text-sm font-medium text-gray-600 dark:text-gray-300 hover:text-cyan-500 dark:hover:text-cyan-400 transition-colors"
-            >
-              Why us?
-            </Link>
-            <Link
-              href="#architecture"
-              className="text-sm font-medium text-gray-600 dark:text-gray-300 hover:text-cyan-500 dark:hover:text-cyan-400 transition-colors"
-            >
-              Architecture
-            </Link>
-            <Link
-              href="/about"
-              className="text-sm font-medium text-gray-600 dark:text-gray-300 hover:text-cyan-500 dark:hover:text-cyan-400 transition-colors"
-            >
-              About
-            </Link>
-            <Link
-              href="#blog"
-              className="text-sm font-medium text-gray-600 dark:text-gray-300 hover:text-cyan-500 dark:hover:text-cyan-400 transition-colors"
-            >
-              Blog
-            </Link>
-            
-          </nav>
-
-          <div className="flex items-center space-x-2 md:space-x-4">
-            <ThemeToggle />
-            <Link href="/schedule-demo">
-              <Button size="sm" className="bg-cyan-500 hover:bg-cyan-600 text-white font-semibold text-base sm:text-lg px-6 sm:px-8 py-4 sm:py-6">
-                Book Consultation
-                <ArrowRight className="ml-2 h-4 w-4 sm:h-5 sm:w-5" />
-              </Button>
-            </Link>
-            
-            {/* Mobile Menu Button */}
-            <Button
-              variant="ghost"
-              size="icon"
-              className="md:hidden"
-              onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            >
-              {mobileMenuOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
-            </Button>
-          </div>
-        </div>
-
-        {/* Mobile Navigation Menu */}
-        {mobileMenuOpen && (
-          <div className="md:hidden border-t border-gray-200 dark:border-gray-800 bg-white/95 dark:bg-black/95 backdrop-blur">
-            <nav className="container px-4 py-4 space-y-4">
-              <Link
-                href="#agents"
-                className="block text-base font-medium text-gray-600 dark:text-gray-300 hover:text-cyan-500 dark:hover:text-cyan-400 transition-colors py-2"
-                onClick={() => setMobileMenuOpen(false)}
-              >
-                Our Agents
-              </Link>
-              <Link
-                href="#architecture"
-                className="block text-base font-medium text-gray-600 dark:text-gray-300 hover:text-cyan-500 dark:hover:text-cyan-400 transition-colors py-2"
-                onClick={() => setMobileMenuOpen(false)}
-              >
-                Architecture
-              </Link>
-              <Link
-                href="#blog"
-                className="block text-base font-medium text-gray-600 dark:text-gray-300 hover:text-cyan-500 dark:hover:text-cyan-400 transition-colors py-2"
-                onClick={() => setMobileMenuOpen(false)}
-              >
-                Blog
-              </Link>
-              <Link
-                href="/about"
-                className="block text-base font-medium text-gray-600 dark:text-gray-300 hover:text-cyan-500 dark:hover:text-cyan-400 transition-colors py-2"
-                onClick={() => setMobileMenuOpen(false)}
-              >
-                About
-              </Link>
-              <Link href="/schedule-demo">
-                <Button 
-                  className="w-full sm:hidden bg-cyan-500 hover:bg-cyan-600 text-white font-semibold mt-4" 
-                  onClick={() => setMobileMenuOpen(false)}
-                >
-                  Book Consultation
-                </Button>
-              </Link>
-            </nav>
-          </div>
-        )}
-      </header>
+      {/* Navbar comes from layout */}
 
       {/* Hero Section */}
       <section className="py-12 sm:py-20 md:py-32 relative overflow-hidden">
@@ -474,7 +354,7 @@ export default function BanyanIntelligenceLanding() {
               <div className="relative bg-white/90 dark:bg-gray-900/80 backdrop-blur-sm rounded-lg border border-gray-200 dark:border-gray-700 p-8 transform perspective-1000 hover:rotateX-2 hover:rotateY-2 transition-transform duration-300">
                 <div className="relative transform-gpu">
                   <Image
-                    src="/architecture-diagram.png"
+                    src="/Ell3ArchitectureSketch.png"
                     alt="Banyan Intelligence Architecture Diagram"
                     width={1200}
                     height={800}
@@ -572,7 +452,7 @@ export default function BanyanIntelligenceLanding() {
             </Card>
           </div>
 
-          <div className="text-center mt-12">
+          <div className="text-center mt-6">
             <Link href="/blog" className="inline-flex items-center border border-gray-300 dark:border-gray-600 text-gray-900 dark:text-white bg-white dark:bg-transparent hover:bg-gray-50 dark:hover:bg-gray-800 text-lg font-medium px-8 py-6 rounded-md transition-colors">
               View All Posts
               <BookOpen className="ml-2 h-5 w-5" />
@@ -582,7 +462,7 @@ export default function BanyanIntelligenceLanding() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-16 md:py-24 bg-gradient-to-br from-cyan-500/10 to-purple-500/10 dark:from-cyan-900/20 dark:to-purple-900/20 dotted-background relative">
+      <section className="py-6 md:py-8 bg-gradient-to-br from-cyan-500/10 to-purple-500/10 dark:from-cyan-900/20 dark:to-purple-900/20 dotted-background relative">
         <div className="absolute inset-0 bg-gradient-to-r from-cyan-500/5 to-purple-500/10 dark:from-cyan-900/10 dark:to-purple-900/15" />
         <div className="container px-4 md:px-6 text-center relative">
           <div className="max-w-3xl mx-auto space-y-8">
@@ -651,7 +531,7 @@ export default function BanyanIntelligenceLanding() {
 
              {/* Agents */}
           <div className="space-y-4 dark:bg-black dark:text-white">
-            <h3 className="text-lg font-semibold dark:bg-black dark:text-white">Agents</h3>
+            <h3 className="text-lg font-semibold dark:bg-black dark:text-white">Our Solutions</h3>
             <ul className="space-y-2 dark:bg-black dark:text-white">
               <li>
                 <Link href="https://ell3.ai/" className="hover:text-gray-900 dark:bg-black dark:text-white transition-colors">
@@ -666,6 +546,11 @@ export default function BanyanIntelligenceLanding() {
               <li>
                 <Link href="#" className="hover:text-gray-900 dark:bg-black dark:text-white transition-colors">
                   BICO Agent
+                </Link>
+              </li>
+              <li>
+                <Link href="#" className="hover:text-gray-900 dark:bg-black dark:text-white transition-colors">
+                  ROP
                 </Link>
               </li>
             </ul>

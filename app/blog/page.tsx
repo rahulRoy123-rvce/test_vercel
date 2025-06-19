@@ -15,7 +15,7 @@ export const metadata = {
 export default function BlogListing() {
   return (
     <>
-    <SiteHeader />
+    
     <div className="min-h-screen bg-gray-50 dark:bg-black dotted-background pt-24 pb-24 text-gray-900 dark:text-white">
       <div className="container px-4 md:px-6">
         <div className="text-center space-y-4 mb-16">

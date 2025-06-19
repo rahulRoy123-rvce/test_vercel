@@ -24,6 +24,9 @@ export default function SiteHeader() {
           <Link href="/#agents" className="text-sm font-medium text-gray-600 dark:text-gray-300 hover:text-cyan-500 dark:hover:text-cyan-400 transition-colors">
             Our Agents
           </Link>
+          <Link href="/#why-choose-us" className="text-sm font-medium text-gray-600 dark:text-gray-300 hover:text-cyan-500 dark:hover:text-cyan-400 transition-colors">
+            Why Us?
+          </Link>
           <Link href="/#architecture" className="text-sm font-medium text-gray-600 dark:text-gray-300 hover:text-cyan-500 dark:hover:text-cyan-400 transition-colors">
             Architecture
           </Link>

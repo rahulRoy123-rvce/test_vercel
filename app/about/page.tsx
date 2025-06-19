@@ -12,7 +12,7 @@ export const metadata = {
 export default function AboutPage() {
   return (
     <>
-      <SiteHeader />
+      
       <section className="min-h-screen pt-24 pb-32 relative text-gray-900 dark:text-white dotted-background">
         <div className="absolute inset-0 bg-gradient-to-br from-cyan-500/10 to-purple-500/10 dark:from-cyan-900/20 dark:to-purple-900/20" />
         <div className="container px-4 md:px-6 text-center space-y-8 max-w-5xl mx-auto relative">

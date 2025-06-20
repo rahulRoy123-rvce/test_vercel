@@ -58,23 +58,36 @@ export default function BanyanIntelligenceLanding() {
               </p>
             </div>
 
-            <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center px-4 sm:px-0">
+            <div className="flex flex-col sm:flex-row items-center gap-3 sm:gap-4 justify-center px-4 sm:px-0">
               <Link href="/schedule-demo">
                 <Button size="lg" className="bg-cyan-500 hover:bg-cyan-600 text-white font-semibold text-base sm:text-lg px-6 sm:px-8 py-4 sm:py-6">
                   Book Consultation
                   <ArrowRight className="ml-2 h-4 w-4 sm:h-5 sm:w-5" />
                 </Button>
               </Link>
+
+              {/* Mobile Link */}
+              <Link
+                href="#agent-demos"
+                className="inline-flex items-center text-cyan-600 dark:text-white hover:text-cyan-700 dark:hover:text-cyan-200 font-medium transition-colors sm:hidden"
+              >
+                Explore Solutions
+                <ArrowRight className="ml-1 h-4 w-4" />
+              </Link>
+
+              {/* Desktop/Tablet Button */}
+              <Link href="#agent-demos">
               <Button
                 variant="outline"
                 size="lg"
-                className="border-gray-300 dark:border-gray-600 text-gray-900 dark:text-white bg-white dark:bg-transparent hover:bg-gray-50 dark:hover:bg-gray-800 text-base sm:text-lg px-6 sm:px-8 py-4 sm:py-6"
+                className="hidden sm:inline-flex border-gray-300 dark:border-gray-600 text-gray-900 dark:text-white bg-white dark:bg-transparent hover:bg-gray-50 dark:hover:bg-gray-800 text-base sm:text-lg px-6 sm:px-8 py-4 sm:py-6"
               >
                 Explore Our Solutions
               </Button>
+              </Link>
             </div>
 
-            <div className="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-8 text-sm text-gray-500 dark:text-gray-400 pt-8">
+            <div className="hidden sm:flex flex-row items-center justify-center gap-4 sm:gap-8 text-sm text-gray-500 dark:text-gray-400 pt-8">
               <div className="flex items-center space-x-2">
                 <CheckCircle className="h-4 w-4 text-cyan-500 dark:text-cyan-400" />
                 <span>Specialized AI Agents</span>
@@ -484,7 +497,7 @@ export default function BanyanIntelligenceLanding() {
               <Button
                 variant="outline"
                 size="lg"
-                className="border-gray-300 dark:border-gray-600 text-gray-900 dark:text-white bg-white dark:bg-transparent hover:bg-gray-50 dark:hover:bg-gray-800 text-lg px-8 py-6"
+                className="border-gray-300 dark:border-gray-600 text-gray-900 dark:text-white bg-white dark:bg-transparent hover:bg-gray-50 dark:hover:bg-gray-800 text-base px-6 py-4 sm:text-lg sm:px-8 sm:py-6"
               >
                 Learn More
               </Button>

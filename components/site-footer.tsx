@@ -11,7 +11,22 @@ export default function SiteFooter() {
           <div className="space-y-4">
             <div className="flex items-center space-x-3">
               <div className="flex h-10 w-10 items-center justify-center">
-                <Image src="/BI_logo-1cm[36].png" alt="Banyan Intelligence Logo" width={40} height={40} className="h-10 w-10 object-contain" />
+                {/* Light logo */}
+                <Image
+                  src="/BI_logo-1cm[36].png"
+                  alt="Banyan Intelligence Logo"
+                  width={40}
+                  height={40}
+                  className="h-10 w-10 object-contain block dark:hidden"
+                />
+                {/* Dark logo */}
+                <Image
+                  src="/black_logo.png"
+                  alt="Banyan Intelligence Logo"
+                  width={40}
+                  height={40}
+                  className="h-10 w-10 object-contain hidden dark:block"
+                />
               </div>
               <span className="text-xl font-bold text-gray-900 dark:text-white">Banyan Intelligence</span>
             </div>

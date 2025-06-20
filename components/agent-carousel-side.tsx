@@ -3,9 +3,11 @@
 import { useState, useEffect } from "react"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
-import { CheckCircle, ChevronLeft, ChevronRight, Play, Pause } from "lucide-react"
+import { CheckCircle, ChevronLeft, ChevronRight, Play, Pause, ArrowRight } from "lucide-react"
 import { MessageSquare, BarChart3, Search } from "lucide-react"
 import Link from "next/link"
+import Image from "next/image"
+import demoImg from "@/components/img11.png"
 
 // Reuse the same agents array as original carousel
 const agents = [
@@ -137,7 +139,7 @@ export default function AgentCarouselSide() {
   }
 
   return (
-    <div className="relative max-w-7xl mx-auto px-2 sm:px-4">
+    <div className="relative max-w-7xl mx-auto px-4 sm:px-6">
       <div className="relative overflow-hidden rounded-2xl">
         <div
           className="flex transition-transform duration-700 ease-in-out"
@@ -151,35 +153,74 @@ export default function AgentCarouselSide() {
                 <Card
                   className={`relative bg-white/80 dark:bg-gray-900/50 border-gray-200 dark:border-gray-700 ${colors.border} transition-all duration-300`}
                 >
-                  {agent.id.includes('ops-agent') ? (
+                  {agent.id.includes("ops-agent") ? (
                     <Link
                       href="https://ops-agent.ell3.ai/"
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="absolute top-4 right-4 bg-white text-cyan-600 border border-cyan-500 hover:bg-cyan-50 font-semibold text-sm px-4 py-2 rounded-full shadow"
+                      className="hidden sm:inline-flex sm:absolute sm:top-4 sm:right-4 items-center bg-white dark:bg-gray-800 text-cyan-600 dark:text-white border-2 border-cyan-500 dark:border-gray-600 hover:bg-cyan-50 dark:hover:bg-gray-700 font-semibold text-sm px-4 py-2 rounded-full shadow transition-colors"
                     >
-                      Try Now
+                      <span>Try Now</span>
+                      <ArrowRight className="ml-1 h-4 w-4" />
                     </Link>
-                  ) : agent.id.includes('business-agent') ? (
+                  ) : agent.id.includes("business-agent") ? (
                     <Link
                       href="https://ell3.ai/"
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="absolute top-4 right-4 bg-white text-cyan-600 border border-cyan-500 hover:bg-cyan-50 font-semibold text-sm px-4 py-2 rounded-full shadow"
+                      className="hidden sm:inline-flex sm:absolute sm:top-4 sm:right-4 items-center bg-gradient-to-r from-purple-500 to-cyan-500 text-white hover:opacity-90 font-semibold text-sm px-4 py-2 rounded-full shadow transition-opacity"
                     >
-                      Try Now
+                      <span>Try Now</span>
+                      <ArrowRight className="ml-1 h-4 w-4" />
+                    </Link>
+                  ) : agent.id.includes("bico-agent") ? (
+                    <Link
+                      href="/schedule-demo"
+                      className="hidden sm:inline-flex sm:absolute sm:top-4 sm:right-4 items-center bg-cyan-500 dark:bg-gray-800 hover:bg-cyan-600 dark:hover:bg-gray-700 text-white font-semibold text-sm px-4 py-2 md:px-6 md:py-3 rounded-full shadow transition-colors"
+                    >
+                      <span>Try Now</span>
+                      <ArrowRight className="ml-1 h-4 w-4" />
                     </Link>
                   ) : null}
-                  <CardHeader className="p-4 sm:p-6 pb-4">
-                    <div className="flex items-center space-x-4 mb-6">
+                  <CardHeader className="p-4 sm:p-6 pb-4 pr-28">
+                    <div className="flex flex-col sm:flex-row items-start sm:items-center space-y-4 sm:space-y-0 sm:space-x-4 mb-6">
                       <div className={`flex h-12 w-12 items-center justify-center rounded-full ${colors.iconBg} flex-shrink-0`}>
                         <Icon className={`h-6 w-6 ${colors.iconColor}`} />
                       </div>
-                      <div>
+                      <div className="space-y-4">
                         <CardTitle className="text-xl sm:text-2xl text-gray-900 dark:text-white">{agent.title}</CardTitle>
                         <CardDescription className="text-gray-600 dark:text-gray-400 text-base sm:text-lg">
                           {agent.subtitle}
                         </CardDescription>
+                        {agent.id.includes("ops-agent") ? (
+                          <Link
+                            href="https://ops-agent.ell3.ai/"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="mt-2 inline-flex items-center bg-white dark:bg-gray-800 text-cyan-600 dark:text-white border-2 border-cyan-500 dark:border-gray-600 hover:bg-cyan-50 dark:hover:bg-gray-700 font-semibold text-sm px-3 py-1.5 rounded-full shadow transition-colors sm:hidden"
+                          >
+                            <span>Try Now</span>
+                            <ArrowRight className="ml-1 h-4 w-4" />
+                          </Link>
+                        ) : agent.id.includes("business-agent") ? (
+                          <Link
+                            href="https://ell3.ai/"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="mt-2 inline-flex items-center bg-gradient-to-r from-purple-500 to-cyan-500 text-white hover:opacity-90 font-semibold text-sm px-3 py-1.5 rounded-full shadow transition-opacity sm:hidden"
+                          >
+                            <span>Try Now</span>
+                            <ArrowRight className="ml-1 h-4 w-4" />
+                          </Link>
+                        ) : agent.id.includes("bico-agent") ? (
+                          <Link
+                            href="/schedule-demo"
+                            className="mt-2 inline-flex items-center bg-cyan-500 dark:bg-gray-800 hover:bg-cyan-600 dark:hover:bg-gray-700 text-white font-semibold text-sm px-3 py-1.5 rounded-full shadow transition-colors sm:hidden"
+                          >
+                            <span>Try Now</span>
+                            <ArrowRight className="ml-1 h-4 w-4" />
+                          </Link>
+                        ) : null}
                       </div>
                     </div>
                   </CardHeader>
@@ -201,8 +242,17 @@ export default function AgentCarouselSide() {
                               className="w-full h-full"
                             />
                           ) : (
-                            <div className="flex items-center justify-center w-full h-full bg-gray-100 dark:bg-gray-800 text-gray-500 dark:text-gray-400">
-                              Demo Coming Soon
+                            <div className="relative w-full h-full">
+                              <Image
+                                src={demoImg}
+                                alt="Demo Coming Soon"
+                                fill
+                                className="object-cover"
+                                sizes="(max-width: 768px) 100vw, 50vw"
+                              />
+                              <div className="absolute inset-0 flex items-center justify-center">
+                                <span className=" text-gray-900  text-lg font-semibold">Demo Coming Soon</span>
+                              </div>
                             </div>
                           )}
                         </div>
@@ -238,7 +288,7 @@ export default function AgentCarouselSide() {
       <Button
         variant="outline"
         size="icon"
-        className="absolute -left-6 sm:-left-8 top-1/2 -translate-y-1/2 bg-cyan-100/80 dark:bg-gray-900/80 border-gray-300 dark:border-gray-600 text-gray-900 dark:text-white hover:bg-gray-50 dark:hover:bg-gray-800 backdrop-blur-sm z-10 h-8 w-8 sm:h-10 sm:w-10"
+        className="absolute -left-3 sm:-left-6 top-1/2 -translate-y-1/2 bg-cyan-100/80 dark:bg-gray-900/80 border-gray-300 dark:border-gray-600 text-gray-900 dark:text-white hover:bg-gray-50 dark:hover:bg-gray-800 backdrop-blur-sm z-10 h-8 w-8 sm:h-10 sm:w-10"
         onClick={prev}
       >
         <ChevronLeft className="h-4 w-4 sm:h-6 sm:w-6 text-cyan-500 dark:text-cyan-400" />
@@ -246,7 +296,7 @@ export default function AgentCarouselSide() {
       <Button
         variant="outline"
         size="icon"
-        className="absolute -right-6 sm:-right-8 top-1/2 -translate-y-1/2 bg-cyan-100/80 dark:bg-gray-900/80 border-gray-300 dark:border-gray-600 text-gray-900 dark:text-white hover:bg-gray-50 dark:hover:bg-gray-800 backdrop-blur-sm z-10 h-8 w-8 sm:h-10 sm:w-10"
+        className="absolute -right-3 sm:-right-6 top-1/2 -translate-y-1/2 bg-cyan-100/80 dark:bg-gray-900/80 border-gray-300 dark:border-gray-600 text-gray-900 dark:text-white hover:bg-gray-50 dark:hover:bg-gray-800 backdrop-blur-sm z-10 h-8 w-8 sm:h-10 sm:w-10"
         onClick={next}
       >
         <ChevronRight className="h-4 w-4 sm:h-6 sm:w-6 text-cyan-500 dark:text-cyan-400" />

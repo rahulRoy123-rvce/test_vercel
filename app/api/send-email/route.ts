@@ -34,9 +34,9 @@ export async function POST(request: NextRequest) {
       console.error('Email transporter verification failed:', e)
     }
 
-    // Logo URL (can be stored in env later)
+    // Logo URL – use env if provided, otherwise fallback to site URL + public asset
     const logoUrl =
-      process.env.EMAIL_LOGO_URL || 'https://ell3.ai/assets/logos/ell3-logo-no-bg.png'
+      process.env.EMAIL_LOGO_URL || `${process.env.SITE_URL ?? 'https://banyanintelligence.com'}/BI_logo-1cm[36].png`
 
     // Email signature HTML
     const emailSignature = `
@@ -44,12 +44,12 @@ export async function POST(request: NextRequest) {
         <table cellpadding="0" cellspacing="0" border="0">
           <tr>
             <td style="vertical-align: top; padding-right: 15px;">
-              <img src="${logoUrl}" alt="ELL3 Logo" width="60" height="60" style="display: block;" />
+              <img src="${logoUrl}" alt="Banyan Intelligence Logo" width="60" height="60" style="display: block;" />
             </td>
             <td style="vertical-align: top; font-family: Arial, sans-serif; font-size: 14px; line-height: 1.4;">
-              <strong>The ELL3 Team</strong><br />
-              <a href="mailto:hi@ell3.ai" style="color: #0066cc; text-decoration: none;">hi@ell3.ai</a><br />
-              <a href="https://ell3.ai" style="color: #0066cc; text-decoration: none;">ell3.ai</a>
+              <strong>The Banyan Intelligence Team</strong><br />
+              <a href="mailto:hello@banyanintelligence.com" style="color: #0066cc; text-decoration: none;">hello@banyanintelligence.com</a><br />
+              <a href="https://banyanintelligence.com" style="color: #0066cc; text-decoration: none;">banyanintelligence.com</a>
             </td>
           </tr>
         </table>
@@ -58,9 +58,9 @@ export async function POST(request: NextRequest) {
 
     // Admin notification email
     const mailOptions = {
-      from: process.env.EMAIL_FROM || 'your-email@ell3.ai',
-      to: process.env.EMAIL_TO || 'demo-requests@ell3.ai',
-      subject: 'New Demo Request from ELL3 Website',
+      from: process.env.EMAIL_FROM || 'hello@banyanintelligence.com',
+      to: process.env.EMAIL_TO || 'hello@banyanintelligence.com',
+      subject: 'New Consultation Request from Banyan Intelligence Website',
       html: `
         <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto;">
           <div style="text-align: center; padding: 20px 0;">
@@ -83,26 +83,26 @@ export async function POST(request: NextRequest) {
 
     // Confirmation email to the user
     const userMailOptions = {
-      from: `${process.env.EMAIL_FROM_NAME || 'ELL3 Team'} <${
-        process.env.EMAIL_FROM || 'hi@ell3.ai'
+      from: `${process.env.EMAIL_FROM_NAME || 'Banyan Intelligence Team'} <${
+        process.env.EMAIL_FROM || 'hello@banyanintelligence.com'
       }>`,
       to: email,
-      subject: 'We received your ELL3 demo request',
+      subject: 'We received your consultation request',
       html: `
         <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto;">
           <div style="text-align: center; padding: 20px 0;">
             <img src="${logoUrl}" alt="ELL3 Logo" width="150" style="max-width: 100%;" />
           </div>
           <div style="padding: 20px; background-color: #ffffff; border-radius: 5px; box-shadow: 0 2px 5px rgba(0,0,0,0.1);">
-            <h1 style="color: #333333; font-size: 24px; margin-top: 0;">Thank you for your interest in ELL3!</h1>
+            <h1 style="color: #333333; font-size: 24px; margin-top: 0;">Thank you for reaching out to Banyan Intelligence!</h1>
             <p>Hello ${name},</p>
-            <p>We have received your demo request and our team will be in touch with you shortly.</p>
+            <p>We have received your consultation request and our team will be in touch with you shortly.</p>
             <p>Here's a summary of the information you provided:</p>
             <ul>
               <li><strong>Company:</strong> ${company}</li>
               <li><strong>Phone:</strong> ${phone || 'Not provided'}</li>
             </ul>
-            <p>If you have any urgent questions, please don't hesitate to contact us directly at <a href="mailto:hi@ell3.ai" style="color: #0066cc;">hi@ell3.ai</a></p>
+            <p>If you have any urgent questions, please don't hesitate to contact us directly at <a href="mailto:hello@banyanintelligence.com" style="color: #0066cc;">hello@banyanintelligence.com</a></p>
           </div>
           ${emailSignature}
         </div>

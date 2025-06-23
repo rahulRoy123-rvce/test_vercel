@@ -494,13 +494,6 @@ export default function BanyanIntelligenceLanding() {
                   <Calendar className="ml-2 h-5 w-5" />
                 </Button>
               </Link>
-              <Button
-                variant="outline"
-                size="lg"
-                className="border-gray-300 dark:border-gray-600 text-gray-900 dark:text-white bg-white dark:bg-transparent hover:bg-gray-50 dark:hover:bg-gray-800 text-base px-6 py-4 sm:text-lg sm:px-8 sm:py-6"
-              >
-                Learn More
-              </Button>
             </div>
             <h4 className="text-xl font-bold tracking-tight sm:text-xl md:text-xl text-gray-900 dark:text-white">
             AI Assistants for everyone

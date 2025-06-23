@@ -36,7 +36,7 @@ export async function POST(request: NextRequest) {
 
     // Logo URL – use env if provided, otherwise fallback to site URL + public asset
     const logoUrl =
-      process.env.EMAIL_LOGO_URL || `${process.env.SITE_URL ?? 'https://banyanintelligence.com'}/BI_logo-1cm[36].png`
+      process.env.EMAIL_LOGO_URL || `${process.env.SITE_URL ?? 'https://raw.githubusercontent.com/rahulRoy123-rvce/assets/refs/heads/main/BI_logo-1cm%5B36%5D.png'}`
 
     // Email signature HTML
     const emailSignature = `

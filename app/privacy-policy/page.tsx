@@ -67,7 +67,7 @@ export default function PrivacyPolicyPage() {
               <li>Opting out of marketing communications</li>
             </ul>
             <p>
-              To exercise any of these rights, please contact us at <Link href="mailto:hello@banyanintelligence.com" className="underline">hello@banyanintelligence.com</Link>.
+              To exercise any of these rights, please contact us at <Link href="mailto:hi@banyanintelligence.com" className="underline">hi@banyanintelligence.com</Link>.
             </p>
 
             <h2 className="font-semibold">7. Changes to This Policy</h2>
@@ -79,7 +79,7 @@ export default function PrivacyPolicyPage() {
             <h2 className="font-semibold">8. Contact Us</h2>
             <p>If you have any questions about this Privacy Policy or how we handle your data, please reach out to us at:</p>
             <ul>
-              <li>Email: <Link href="mailto:hello@banyanintelligence.com" className="underline">hello@banyanintelligence.com</Link></li>
+              <li>Email: <Link href="mailto:hi@banyanintelligence.com" className="underline">hi@banyanintelligence.com</Link></li>
               <li>Website: <Link href="https://banyanintelligence.com" className="underline" target="_blank">https://banyanintelligence.com</Link></li>
             </ul>
           </div>

@@ -26,6 +26,7 @@ import AgentCarousel from "@/components/agent-carousel"
 import { ThemeToggle } from "@/components/theme-toggle"
 import AgentCarouselSide from "@/components/agent-carousel-side"
 import ELL3ArchitectureSketch from "@/public/ELL3ArchitectureSketch.png"
+import SubscribeForm from "@/components/subscribe-form"
 
 export default function BanyanIntelligenceLanding() {
   return (
@@ -527,10 +528,10 @@ export default function BanyanIntelligenceLanding() {
               </div>
               <div className="text-sm dark:bg-black dark:text-white">
                 <Link 
-                  href="mailto:hello@banyanintelligence.com"
+                  href="mailto:hi@banyanintelligence.com"
                   className="hover:text-gray-900 dark:bg-black dark:text-white transition-colors"
                 >
-                  hello@banyanintelligence.com
+                  hi@banyanintelligence.com
                 </Link>
               </div>
              
@@ -591,18 +592,7 @@ export default function BanyanIntelligenceLanding() {
               <p className="text-sm dark:bg-black dark:text-white">
                 We're expanding our suite of AI agents to address more workplace challenges. Sign up for our newsletter to be the first to know about new solutions.
               </p>
-              <div className="flex space-x-2">
-                <input
-                  type="email"
-                  placeholder="Enter your email"
-                  className="flex-1 px-3 py-2 border border-gray-300 rounded-md text-gray-900 placeholder-gray-500 focus:outline-none focus:border-gray-400 focus:ring-1 focus:ring-gray-400 transition-colors"
-                />
-                <Button 
-                  className="bg-blue-900 hover:bg-blue-800 text-white font-medium px-6 py-2 transition-all duration-300"
-                >
-                  Submit
-                </Button>
-              </div>
+              <SubscribeForm />
             </div>
           </div>
 

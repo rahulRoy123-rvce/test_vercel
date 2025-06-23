@@ -60,7 +60,7 @@ export default function TermsOfServicePage() {
 
             <h2 className="font-semibold">8. Contact Information</h2>
             <p>
-              For any questions about these Terms of Service, please contact us at <Link href="mailto:hello@banyanintelligence.com" className="underline">hello@banyanintelligence.com</Link>.
+              For any questions about these Terms of Service, please contact us at <Link href="mailto:hi@banyanintelligence.com" className="underline">hi@banyanintelligence.com</Link>.
             </p>
           </div>
         </div>

@@ -22,8 +22,8 @@ export async function POST(request: Request) {
 
     // Send notification to admin
     await transporter.sendMail({
-      from: process.env.EMAIL_FROM || "hello@banyanintelligence.com",
-      to: process.env.EMAIL_TO || "hello@banyanintelligence.com",
+      from: process.env.EMAIL_FROM || "hi@banyanintelligence.com",
+      to: process.env.EMAIL_TO || "hi@banyanintelligence.com",
       subject: "New newsletter subscriber",
       html: `<p style="font-family: Arial, sans-serif; font-size: 16px;">This user asked to subscribe to the Banyan Intelligence newsletter:</p>
              <p style="font-family: Arial, sans-serif; font-size: 20px; font-weight: bold;">${email}</p>`,

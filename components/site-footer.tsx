@@ -31,8 +31,8 @@ export default function SiteFooter() {
               <span className="text-xl font-bold text-gray-900 dark:text-white">Banyan Intelligence</span>
             </div>
             <div className="text-sm text-gray-600 dark:text-white">
-              <Link href="mailto:hello@banyanintelligence.com" className="hover:text-gray-900 transition-colors">
-                hello@banyanintelligence.com
+              <Link href="mailto:hi@banyanintelligence.com" className="hover:text-gray-900 transition-colors">
+                hi@banyanintelligence.com
               </Link>
             </div>
             <div className="text-md text-white">AI Assistants for everyone at work</div>

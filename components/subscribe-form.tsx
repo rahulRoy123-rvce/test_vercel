@@ -16,6 +16,7 @@ export default function SubscribeForm() {
   const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault()
 
+    console.log("[SubscribeForm] submit clicked", email)
     // Guard clause for empty email
     if (!email.trim()) {
       setSubmitStatus({ success: false, message: "Please enter a valid email." })
@@ -23,6 +24,7 @@ export default function SubscribeForm() {
     }
 
     setIsSubmitting(true)
+    console.log("[SubscribeForm] sending request …")
     setSubmitStatus(null)
 
     try {
@@ -33,6 +35,7 @@ export default function SubscribeForm() {
       })
 
       const data = await response.json()
+      console.log("[SubscribeForm] response status", response.status, data)
 
       if (response.ok) {
         setSubmitStatus({ success: true, message: data.message || "Subscribed successfully!" })
@@ -41,7 +44,7 @@ export default function SubscribeForm() {
         throw new Error(data.message)
       }
     } catch (error) {
-      console.error("Subscribe error:", error)
+      console.error("[SubscribeForm] fetch error", error)
       setSubmitStatus({ success: false, message: error instanceof Error ? error.message : "Something went wrong." })
     } finally {
       setIsSubmitting(false)

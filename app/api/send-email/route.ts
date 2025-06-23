@@ -48,7 +48,7 @@ export async function POST(request: NextRequest) {
             </td>
             <td style="vertical-align: top; font-family: Arial, sans-serif; font-size: 14px; line-height: 1.4;">
               <strong>The Banyan Intelligence Team</strong><br />
-              <a href="mailto:hello@banyanintelligence.com" style="color: #0066cc; text-decoration: none;">hello@banyanintelligence.com</a><br />
+              <a href="mailto:hi@banyanintelligence.com" style="color: #0066cc; text-decoration: none;">hi@banyanintelligence.com</a><br />
               <a href="https://banyanintelligence.com" style="color: #0066cc; text-decoration: none;">banyanintelligence.com</a>
             </td>
           </tr>
@@ -58,8 +58,8 @@ export async function POST(request: NextRequest) {
 
     // Admin notification email
     const mailOptions = {
-      from: process.env.EMAIL_FROM || 'hello@banyanintelligence.com',
-      to: process.env.EMAIL_TO || 'hello@banyanintelligence.com',
+      from: process.env.EMAIL_FROM || 'hi@banyanintelligence.com',
+      to: process.env.EMAIL_TO || 'hi@banyanintelligence.com',
       subject: 'New Consultation Request from Banyan Intelligence Website',
       html: `
         <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto;">
@@ -84,7 +84,7 @@ export async function POST(request: NextRequest) {
     // Confirmation email to the user
     const userMailOptions = {
       from: `${process.env.EMAIL_FROM_NAME || 'Banyan Intelligence Team'} <${
-        process.env.EMAIL_FROM || 'hello@banyanintelligence.com'
+        process.env.EMAIL_FROM || 'hi@banyanintelligence.com'
       }>`,
       to: email,
       subject: 'We received your consultation request',
@@ -102,7 +102,7 @@ export async function POST(request: NextRequest) {
               <li><strong>Company:</strong> ${company}</li>
               <li><strong>Phone:</strong> ${phone || 'Not provided'}</li>
             </ul>
-            <p>If you have any urgent questions, please don't hesitate to contact us directly at <a href="mailto:hello@banyanintelligence.com" style="color: #0066cc;">hello@banyanintelligence.com</a></p>
+            <p>If you have any urgent questions, please don't hesitate to contact us directly at <a href="mailto:hi@banyanintelligence.com" style="color: #0066cc;">hi@banyanintelligence.com</a></p>
           </div>
           ${emailSignature}
         </div>

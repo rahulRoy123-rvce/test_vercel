@@ -245,21 +245,21 @@ export default function AgentCarousel() {
 
       {/* Navigation Buttons */}
       <Button
-        variant="outline"
+        variant="ghost"
         size="icon"
-        className="absolute left-2 sm:left-4 top-1/2 -translate-y-1/2 bg-cyan-100/80 dark:bg-gray-900/80 border-gray-300 dark:border-gray-600 text-gray-900 dark:text-white hover:bg-gray-50 dark:hover:bg-gray-800 hover:border-cyan-500/50 backdrop-blur-sm z-10 h-8 w-8 sm:h-10 sm:w-10"
+        className="absolute left-2 sm:left-4 top-1/2 -translate-y-1/2 bg-transparent border-none text-cyan-500 dark:text-cyan-400 hover:bg-transparent sm:bg-cyan-100/80 sm:border sm:border-gray-300 sm:dark:border-gray-600 sm:text-gray-900 sm:dark:text-white sm:hover:bg-gray-50 sm:dark:hover:bg-gray-800 backdrop-blur-sm z-10 h-8 w-8 sm:h-10 sm:w-10"
         onClick={prevSlide}
       >
-        <ChevronLeft className="h-4 w-4 sm:h-6 sm:w-6 text-cyan-500 dark:text-cyan-900" />
+        <ChevronLeft className="h-4 w-4 sm:h-6 sm:w-6" />
       </Button>
 
       <Button
-        variant="outline"
+        variant="ghost"
         size="icon"
-        className="absolute right-2 sm:right-4 top-1/2 -translate-y-1/2 bg-cyan-100/80 dark:bg-gray-900/80 border-gray-300 dark:border-gray-600 text-gray-900 dark:text-white hover:bg-gray-50 dark:hover:bg-gray-800 hover:border-cyan-500/50 backdrop-blur-sm z-10 h-8 w-8 sm:h-10 sm:w-10"
+        className="absolute right-2 sm:right-4 top-1/2 -translate-y-1/2 bg-transparent border-none text-cyan-500 dark:text-cyan-400 hover:bg-transparent sm:bg-cyan-100/80 sm:border sm:border-gray-300 sm:dark:border-gray-600 sm:text-gray-900 sm:dark:text-white sm:hover:bg-gray-50 sm:dark:hover:bg-gray-800 backdrop-blur-sm z-10 h-8 w-8 sm:h-10 sm:w-10"
         onClick={nextSlide}
       >
-        <ChevronRight className="h-4 w-4 sm:h-6 sm:w-6 text-cyan-500 dark:text-cyan-400" />
+        <ChevronRight className="h-4 w-4 sm:h-6 sm:w-6" />
       </Button>
 
       {/* Slide Indicators */}

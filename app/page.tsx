@@ -1,5 +1,3 @@
-"use client"
-
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
@@ -27,6 +25,35 @@ import { ThemeToggle } from "@/components/theme-toggle"
 import AgentCarouselSide from "@/components/agent-carousel-side"
 import ELL3ArchitectureSketch from "@/public/ELL3ArchitectureSketch.png"
 import SubscribeForm from "@/components/subscribe-form"
+import type { Metadata } from "next"
+
+export const metadata: Metadata = {
+  title: "Banyan Intelligence - AI Assistants for everyone at work",
+  description:
+    "Transform your team's workflow with specialized AI agents that eliminate repetitive tasks and amplify human capabilities.",
+  openGraph: {
+    title: "Banyan Intelligence - AI Assistants for everyone at work",
+    description:
+      "Transform your team's workflow with specialized AI agents that eliminate repetitive tasks and amplify human capabilities.",
+    url: "https://banyanintelligence.com",
+    siteName: "Banyan Intelligence",
+    type: "website",
+    locale: "en_US",
+    images: [
+      {
+        url: "https://banyanintelligence.com/placeholder-logo.png",
+        width: 1200,
+        height: 630,
+        alt: "Banyan Intelligence - AI Assistants for everyone at work",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Banyan Intelligence - AI Assistants for everyone at work",
+    images: ["https://banyanintelligence.com/placeholder-logo.png"],
+  },
+}
 
 export default function BanyanIntelligenceLanding() {
   return (
@@ -43,7 +70,8 @@ export default function BanyanIntelligenceLanding() {
                 variant="secondary"
                 className="bg-cyan-100 dark:bg-cyan-900/50 text-cyan-700 dark:text-cyan-300 border-cyan-200 dark:border-cyan-700 text-xs sm:text-sm"
               >
-                🤖 AI-Powered Workflow Transformation
+                🤖 AI Assistants for everyone
+                at work
               </Badge>
               <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold tracking-tight">
                 <span className="text-gray-900 dark:text-white">AI Assistants for </span>

@@ -5,6 +5,7 @@ import { Badge } from "@/components/ui/badge"
 import { Clock } from "lucide-react"
 import Link from "next/link"
 import dynamic from "next/dynamic"
+import type { Metadata } from "next"
 const SiteHeader = dynamic(() => import("@/components/site-header"), { ssr: false })
 import SiteFooter from "@/components/site-footer"
 
@@ -14,6 +15,31 @@ interface Props {
 
 export async function generateStaticParams() {
   return blogPosts.map(p => ({ slug: p.slug }))
+}
+
+export async function generateMetadata({ params }: { params: { slug: string } }): Promise<Metadata> {
+  const post = blogPosts.find(p => p.slug === params.slug)
+  if (!post) {
+    return {
+      title: "Blog | Banyan Intelligence",
+    }
+  }
+
+  return {
+    title: `${post.title} | Banyan Intelligence Blog`,
+    description: post.excerpt,
+    openGraph: {
+      title: `${post.title} | Banyan Intelligence Blog`,
+      description: post.excerpt,
+      url: `https://banyanintelligence.com/blog/${post.slug}`,
+      siteName: "Banyan Intelligence Blog",
+      type: "article",
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: `${post.title} | Banyan Intelligence Blog`,
+    },
+  }
 }
 
 export default function BlogPostPage({ params }: Props) {

@@ -21,7 +21,7 @@ export default function SiteFooter() {
                 />
                 {/* Dark logo */}
                 <Image
-                  src="/black_logo.png"
+                  src="/Logo white.png"
                   alt="Banyan Intelligence Logo"
                   width={40}
                   height={40}

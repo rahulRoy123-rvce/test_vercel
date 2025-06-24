@@ -24,7 +24,7 @@ export default function SiteHeader() {
             />
             {/* Dark theme logo */}
             <Image
-              src="/black_logo.png"
+              src="/Logo white.png"
               alt="Banyan Intelligence Logo"
               width={40}
               height={40}

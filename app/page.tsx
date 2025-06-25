@@ -82,8 +82,7 @@ export default function BanyanIntelligenceLanding() {
                 <span className="text-gray-600 dark:text-gray-400"> at work </span>
               </h1>
               <p className="text-lg sm:text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto leading-relaxed px-4 sm:px-0">
-                Transform your team's workflow with specialized AI agents that eliminate repetitive tasks and amplify
-                human capabilities, letting your experts focus on high-impact work.
+              Unlock real-time insights and automate personalized user feedback with our AI agents by integrating your Shopify, Google Analytics, Calendar apps and more.
               </p>
             </div>
 

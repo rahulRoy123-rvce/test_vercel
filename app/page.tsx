@@ -407,7 +407,7 @@ export default function BanyanIntelligenceLanding() {
       </section>
 
       {/* Blog Section */}
-      <section id="blog" className="py-12 md:py-20 bg-gray-50/50 dark:bg-gray-900/50 dotted-background-dense relative">
+      <section id="blog" className="py-8 md:py-12 bg-gray-50/50 dark:bg-gray-900/50 dotted-background-dense relative">
         <div className="absolute inset-0 bg-gradient-to-r from-cyan-500/5 to-purple-500/5 dark:from-cyan-900/10 dark:to-purple-900/10" />
         <div className="container px-4 md:px-6 relative">
           <div className="text-center space-y-4 mb-16">

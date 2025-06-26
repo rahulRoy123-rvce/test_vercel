@@ -66,13 +66,7 @@ export default function BanyanIntelligenceLanding() {
         <div className="container px-4 md:px-6 relative">
           <div className="max-w-4xl mx-auto text-center space-y-6 md:space-y-8">
             <div className="space-y-4 md:space-y-6">
-              <Badge
-                variant="secondary"
-                className="bg-cyan-100 dark:bg-cyan-900/50 text-cyan-700 dark:text-cyan-300 border-cyan-200 dark:border-cyan-700 text-xs sm:text-sm"
-              >
-                🤖 AI Assistants for everyone
-                at work
-              </Badge>
+              
               <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold tracking-tight">
                 <span className="text-gray-900 dark:text-white">AI Assistants for </span>
                 <span className="bg-gradient-to-r from-cyan-500 to-purple-500 dark:from-cyan-400 dark:to-purple-400 bg-clip-text text-transparent">
@@ -82,7 +76,7 @@ export default function BanyanIntelligenceLanding() {
                 <span className="text-gray-600 dark:text-gray-400"> at work </span>
               </h1>
               <p className="text-lg sm:text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto leading-relaxed px-4 sm:px-0">
-              Unlock real-time insights and automate personalized user feedback with our AI agents by integrating your Shopify, Google Analytics, Calendar apps and more.
+              Unlock <span className="text-cyan-500 font-semibold">real-time insights</span> and <span className="text-cyan-500 font-semibold">automated user feedback</span> with our AI agents by integrating your <span className="text-cyan-500 font-semibold">Shopify, Google Analytics, Calendar apps</span> and more.
               </p>
             </div>
 
@@ -688,6 +682,21 @@ export default function BanyanIntelligenceLanding() {
           <ArrowRight className="h-5 w-5 rotate-[-90deg]" />
         </button>
       </Link>
+
+      {/* SVG definitions for brush clip paths */}
+      <svg width="0" height="0" style={{ position: "absolute" }} aria-hidden="true" focusable="false">
+        <defs>
+          <clipPath id="rect-cp">
+            <rect id="rect" x="0" y="0" width="0" height="1">
+              <animate id="anim" attributeName="width" dur="1s" fill="freeze" calcMode="spline" keyTimes="0; 1" keySplines="0.5,0,0.5,1" values="0;1" />
+            </rect>
+          </clipPath>
+          <clipPath id="clip" clipPathUnits="objectBoundingBox">
+            <use href="#brush-shape" clipPath="url(#rect-cp)" />
+          </clipPath>
+          <path id="brush-shape" d="M.261.995..." />
+        </defs>
+      </svg>
     </div>
   )
 }

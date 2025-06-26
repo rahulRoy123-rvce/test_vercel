@@ -11,26 +11,26 @@ const agents = [
     title: "ELL3 - Ops Agent",
     subtitle: "User Interviews, Not Surveys",
     description:
-      "Ditch boring forms. GoBot is your AI-powered interviewer that chats with your users—over WhatsApp, email, or web—capturing feedback that feels human.",
+      "Ditch tedious forms. Meet your AI-powered conversational bot that collects user feedback by chatting with them – over WhatsApp or email.",
     icon: MessageSquare,
     color: "cyan",
     videoUrl: "https://www.youtube.com/embed/oT-UJadH1yw?si=LHu84lzyPArEypSo",
     features: [
       {
         title: "Feels Human",
-        description: "Conversations that sound real—so users actually respond",
+        description: "Makes conversations that sound real",
       },
       {
         title: "Multi-Modal Feedback",
-        description: "Capture both words and emotion with voice notes",
+        description: "Captures both words and emotions",
       },
       {
-        title: "Insights, Not Spreadsheets",
-        description: "Themes, summaries, quotes—automatically delivered",
+        title: "Insights",
+        description: "Themes, summaries, quotes automatically delivered",
       },
       {
         title: "Frictionless User Experience",
-        description: "No forms, no dashboards, just chats",
+        description: "No forms, just chats",
       },
     ],
   },
@@ -39,18 +39,18 @@ const agents = [
     title: "ELL3 - Business Agent",
     subtitle: "Gen AI Agent for Data Analysis and Insights",
     description:
-      "Replace overwhelming dashboarding tools and rigid views with dynamic insights that reveal what matters most by just asking, instead of writing SQL.",
+      "Replace overwhelming dashboarding tools with our agent which provides dynamic, actionable insights by asking simple queries instead of writing lines of SQL.",
     icon: BarChart3,
     color: "purple",
     videoUrl: "https://www.youtube.com/embed/ySABFzWJENw?si=EFsKSFm0HDlyxFqO",
     features: [
       {
         title: "Plain Language Queries",
-        description: "Ask questions in plain language instead of SQL to instantly uncover key insights",
+        description: "Instantly uncover key insights",
       },
       {
         title: "Seamless Integrations",
-        description: "Connects seamlessly to databases, Shopify, GSuite, Google Analytics, and files",
+        description: "Shopify, Google Analytics, and files",
       },
       {
         title: "Dynamic Views",
@@ -73,11 +73,11 @@ const agents = [
     features: [
       {
         title: "Eliminate RCA Toil",
-        description: "Automate time-consuming root cause analysis",
+        description: "Automate time-consuming Root Cause Analysis",
       },
       {
         title: "Overcome Dashboard Overload",
-        description: "Replace rigid views with dynamic insights",
+        description: "Replace rigid views with dynamic intuitive insights",
       },
       {
         title: "Navigate Complex Incident Landscapes",
@@ -247,7 +247,7 @@ export default function AgentCarousel() {
       <Button
         variant="ghost"
         size="icon"
-        className="absolute left-2 sm:left-4 top-1/2 -translate-y-1/2 bg-transparent border-none text-cyan-500 dark:text-cyan-400 hover:bg-transparent sm:bg-cyan-100/80 sm:border sm:border-gray-300 sm:dark:border-gray-600 sm:text-gray-900 sm:dark:text-white sm:hover:bg-gray-50 sm:dark:hover:bg-gray-800 backdrop-blur-sm z-10 h-8 w-8 sm:h-10 sm:w-10"
+        className="absolute left-2 sm:left-4 top-1/2 -translate-y-1/2 bg-transparent border-none text-cyan-500 dark:text-cyan-400 hover:bg-transparent sm:hover:bg-cyan-100/80 sm:hover:border sm:hover:border-gray-300 sm:hover:dark:border-gray-600 sm:text-gray-900 sm:dark:text-white sm:hover:text-gray-900 sm:hover:dark:text-white backdrop-blur-sm z-10 h-8 w-8 sm:h-10 sm:w-10"
         onClick={prevSlide}
       >
         <ChevronLeft className="h-4 w-4 sm:h-6 sm:w-6" />
@@ -256,7 +256,7 @@ export default function AgentCarousel() {
       <Button
         variant="ghost"
         size="icon"
-        className="absolute right-2 sm:right-4 top-1/2 -translate-y-1/2 bg-transparent border-none text-cyan-500 dark:text-cyan-400 hover:bg-transparent sm:bg-cyan-100/80 sm:border sm:border-gray-300 sm:dark:border-gray-600 sm:text-gray-900 sm:dark:text-white sm:hover:bg-gray-50 sm:dark:hover:bg-gray-800 backdrop-blur-sm z-10 h-8 w-8 sm:h-10 sm:w-10"
+        className="absolute right-2 sm:right-4 top-1/2 -translate-y-1/2 bg-transparent border-none text-cyan-500 dark:text-cyan-400 hover:bg-transparent sm:hover:bg-cyan-100/80 sm:hover:border sm:hover:border-gray-300 sm:hover:dark:border-gray-600 sm:text-gray-900 sm:dark:text-white sm:hover:text-gray-900 sm:hover:dark:text-white backdrop-blur-sm z-10 h-8 w-8 sm:h-10 sm:w-10"
         onClick={nextSlide}
       >
         <ChevronRight className="h-4 w-4 sm:h-6 sm:w-6" />

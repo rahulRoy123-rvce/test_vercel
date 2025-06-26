@@ -102,4 +102,83 @@ export const blogContents: Record<string, React.ReactNode> = {
       </p>
     </>
   ),
+  "ell3-benchmarking": (
+    <>
+      <p className="text-xl font-semibold">Benchmarking an LLM-Powered Chatbot: Beyond Standard Metrics</p>
+      <p className="text-xl">In today's world of language models, many conventional benchmarks rely on standardized, single-output tasks. While useful for gauging raw language capabilities, they miss the nuanced challenges faced by specialised agents—like our root-cause-analysis chatbot, ell3. We therefore designed a composite benchmark that evaluates <em>the entire system</em>, not just the underlying LLM.</p>
+
+      <h3 className="font-semibold text-2xl mt-8">Rethinking Standard LLM Benchmarks</h3>
+      <p className="text-xl">Benchmarks such as MMLU, HumanEval and HellaSwag are great for measuring general language proficiency or coding skills. But an RCA agent needs more: multi-turn reasoning, context retention, and integration with data files. A one-size-fits-all test simply isn't enough.</p>
+
+      <h3 className="font-semibold text-2xl mt-8">Unique Requirements of a Specialised AI Agent</h3>
+      <ul className="list-disc pl-6 space-y-2 text-xl">
+        <li>Maintaining context over extended dialogues that involve multiple micro-agents.</li>
+        <li>Co-ordinating sub-components such as code-execution and tool invocation.</li>
+        <li>Evaluating the impact of role-specific system prompts on overall performance.</li>
+        <li>Working with task-specific data files that change from query to query.</li>
+      </ul>
+
+      <h3 className="font-semibold text-2xl mt-8">Evaluation Criterion</h3>
+      <p className="text-xl">Our composite benchmark combines quantitative, qualitative and operational metrics. A summary is shown below.</p>
+
+      <table className="table-auto border text-sm md:text-base my-6 w-full">
+        <thead>
+          <tr className="bg-gray-100 dark:bg-gray-800">
+            <th className="border px-4 py-2">Metric Category</th>
+            <th className="border px-4 py-2">Key Metric</th>
+            <th className="border px-4 py-2">Description</th>
+            <th className="border px-4 py-2">Evaluation Method</th>
+          </tr>
+        </thead>
+        <tbody>
+          {[
+            ["Quantitative", "Response Accuracy", "How often the bot correctly addresses sub-queries related to RCA tasks", "Scoring against ground truth"],
+            ["Quantitative", "Latency", "Time taken for each response", "Log analysis + count of back-and-forth between micro-agents"],
+            ["Qualitative", "Context Retention", "Ability to recall and maintain context across turns", "Human evaluation"],
+            ["Qualitative", "Dialogue Coherence", "Logical flow and narrative consistency", "Human evaluation"],
+            ["Operational", "Robustness & Stability", "Consistency under sustained multi-turn dialogue", "Stress testing & monitoring"],
+          ].map((row, idx) => (
+            <tr key={idx} className={idx % 2 ? "bg-gray-50 dark:bg-gray-900/20" : ""}>
+              {row.map((cell, i) => (
+                <td key={i} className="border px-4 py-2 align-top">{cell}</td>
+              ))}
+            </tr>
+          ))}
+        </tbody>
+      </table>
+
+      <h3 className="font-semibold text-2xl mt-8">Early Results</h3>
+      <p className="text-xl">We kept the ell3 system constant and swapped only the LLM backend. Prompts were tuned for <code>gpt-4o-mini</code>; other models were run with the same prompts to gauge out-of-the-box performance.</p>
+
+      <table className="table-auto border text-sm md:text-base my-6 w-full">
+        <thead>
+          <tr className="bg-gray-100 dark:bg-gray-800">
+            <th className="border px-4 py-2">LLMs</th>
+            <th className="border px-4 py-2">Response Accuracy</th>
+            <th className="border px-4 py-2">Latency</th>
+            <th className="border px-4 py-2">Context Retention</th>
+            <th className="border px-4 py-2">Dialogue Coherence</th>
+          </tr>
+        </thead>
+        <tbody>
+          {[
+            ["gpt-4o-mini", "85.96%", "Excellent", "Excellent", "Excellent"],
+            ["o4-mini", "82.46%", "Excellent", "Excellent", "Excellent"],
+            ["Claude-Sonnet", "–", "–", "–", "–"],
+            ["Deepseek-r1", "–", "Poor (Local host)", "Poor", "Good"],
+            ["Llama-3.2", "0%", "Poor (Local host)", "Poor", "Poor"],
+          ].map((row, idx) => (
+            <tr key={idx} className={idx % 2 ? "bg-gray-50 dark:bg-gray-900/20" : ""}>
+              {row.map((cell, i) => (
+                <td key={i} className="border px-4 py-2 text-center">{cell}</td>
+              ))}
+            </tr>
+          ))}
+        </tbody>
+      </table>
+
+      <h3 className="font-semibold text-2xl mt-8">Conclusion: Towards Adaptive, Robust AI Systems</h3>
+      <p className="text-xl">Benchmarking an integrated agent like ell3 means looking well beyond raw LLM scores. By combining automated scoring, human evaluation and operational stress-testing, we gain a holistic view of real-world performance—and a dependable feedback loop for continuous improvement.</p>
+    </>
+  ),
 } 

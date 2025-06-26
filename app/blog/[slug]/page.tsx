@@ -48,7 +48,7 @@ export default function BlogPostPage({ params }: Props) {
 
   return (
     <>
-    <SiteHeader />
+    
     <div className="min-h-screen bg-white dark:bg-black dotted-background pt-24 pb-20 text-gray-900 dark:text-white">
       <div className="container px-4 md:px-10 max-w-6xl mx-auto space-y-12">
         <div className="space-y-2 text-center">

@@ -150,3 +150,63 @@
     transform: rotateY(2deg);
   }
 }
+
+/* Gradient underline highlight */
+.highlight {
+  background-image: linear-gradient(180deg, transparent 70%, currentColor 70%);
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+}
+
+.highlight-blue { color: #0ea5e9; }
+.highlight-pink { color: #ec4899; }
+.highlight-green { color: #10b981; }
+.highlight-yellow {
+  background: rgba(253, 224, 71, 0.75); /* yellow */
+  color: #000;
+  padding: 0 0.15em;
+  border-radius: 2px;
+  box-decoration-break: clone; /* keeps highlight across line wraps */
+}
+
+/* blue variant */
+.highlight-blue-bg {
+  background: rgba(191, 219, 254, 0.9); /* light blue */
+  color: #000;
+  padding: 0 0.15em;
+  border-radius: 2px;
+  box-decoration-break: clone;
+}
+
+/* Rustic brushy highlight */
+.rustic-highlight {
+  position: relative;
+  display: inline-block;
+  color: #000;
+}
+.rustic-highlight::before {
+  content: "";
+  position: absolute;
+  inset: 0 -0.05em 0 -0.05em; /* slight horizontal spill */
+  background: rgba(253, 224, 71, 0.85);
+  transform: skewX(-6deg) rotate(-1deg);
+  border-radius: 3px;
+  filter: blur(1px);
+  z-index: -2;
+  box-decoration-break: clone;
+}
+
+/* subtle noise texture overlay */
+.rustic-highlight::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAIAAAACCAYAAABytg0kAAAADUlEQVQIW2P4z8DwHwAF/wJ+gM0uYQAAAABJRU5ErkJggg==");
+  background-repeat: repeat;
+  opacity: 0.25;
+  mix-blend-mode: multiply;
+  transform: skewX(-6deg) rotate(-1deg);
+  border-radius: 3px;
+  box-decoration-break: clone;
+}

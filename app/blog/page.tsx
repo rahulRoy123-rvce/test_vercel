@@ -30,7 +30,7 @@ export default function BlogListing() {
 
         <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3 max-w-6xl mx-auto">
           {blogPosts.map(post => (
-            <Card key={post.slug} className="bg-white/80 dark:bg-gray-900/60 border-gray-200 dark:border-gray-700 hover:shadow-lg transition-all duration-300 group">
+            <Card key={post.slug} className="bg-white/80 dark:bg-gray-900/60 border-gray-200 dark:border-gray-700 hover:shadow-lg transition-all duration-300 group h-full flex flex-col">
               <div className="aspect-video rounded-t-lg bg-gradient-to-br from-cyan-100 to-purple-100 dark:from-cyan-900/20 dark:to-purple-900/20 border-b border-gray-200 dark:border-gray-600 flex items-center justify-center">
                 <BookOpen className="h-10 w-10 text-cyan-600 dark:text-cyan-400" />
               </div>
@@ -41,15 +41,17 @@ export default function BlogListing() {
                   <span>•</span>
                   <span>{post.date}</span>
                 </div>
-                <CardTitle className="text-lg font-semibold group-hover:text-cyan-600 dark:group-hover:text-cyan-400 transition-colors">
-                  {post.title}
-                </CardTitle>
+                <Link href={`/blog/${post.slug}`}> 
+                  <CardTitle className="text-lg font-semibold text-cyan-600 dark:text-cyan-400 hover:underline">
+                    {post.title}
+                  </CardTitle>
+                </Link>
               </CardHeader>
-              <CardContent>
+              <CardContent className="flex flex-col justify-between h-full">
                 <CardDescription className="text-gray-600 dark:text-gray-300 mb-4">
                   {post.excerpt}
                 </CardDescription>
-                <Link href={`/blog/${post.slug}`} className="inline-flex items-center text-cyan-600 dark:text-cyan-400 hover:text-cyan-700 dark:hover:text-cyan-300 font-medium transition-colors">
+                <Link href={`/blog/${post.slug}`} className="mt-auto inline-flex items-center text-cyan-600 dark:text-cyan-400 hover:text-cyan-700 dark:hover:text-cyan-300 font-medium transition-colors">
                   Read More
                   <BookOpen className="ml-1 h-4 w-4" />
                 </Link>

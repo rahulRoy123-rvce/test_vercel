@@ -26,6 +26,7 @@ import AgentCarouselSide from "@/components/agent-carousel-side"
 import ELL3ArchitectureSketch from "@/public/ELL3ArchitectureSketch.png"
 import SubscribeForm from "@/components/subscribe-form"
 import type { Metadata } from "next"
+import { blogPosts } from "@/components/blog-data"
 
 export const metadata: Metadata = {
   title: "Banyan Intelligence - AI Assistants for everyone at work",
@@ -424,68 +425,36 @@ export default function BanyanIntelligenceLanding() {
             </p>
           </div>
 
-          <div className="grid gap-6 sm:gap-8 md:grid-cols-2 lg:grid-cols-2 justify-center max-w-4xl mx-auto">
-            {/* Post 1 */}
-            <Card className="bg-white/80 dark:bg-black/50 border-gray-200 dark:border-gray-700 hover:shadow-lg dark:hover:shadow-gray-700/20 transition-all duration-300 group">
-              <div className="aspect-video bg-gradient-to-br from-cyan-100 to-cyan-200 dark:from-cyan-900/20 dark:to-cyan-700/20 rounded-t-lg border-b border-gray-200 dark:border-gray-600 relative overflow-hidden">
-                <div className="absolute inset-0 flex items-center justify-center">
-                  <div className="w-16 h-16 bg-cyan-200 dark:bg-cyan-500/20 rounded-full flex items-center justify-center border border-cyan-300 dark:border-cyan-500/30">
-                    <BookOpen className="h-8 w-8 text-cyan-600 dark:text-cyan-400" />
+          <div className="grid gap-6 sm:gap-8 md:grid-cols-2 lg:grid-cols-3 justify-center max-w-6xl mx-auto">
+            {blogPosts.slice(0,3).map(post => (
+              <Card key={post.slug} className="bg-white/80 dark:bg-black/50 border-gray-200 dark:border-gray-700 hover:shadow-lg dark:hover:shadow-gray-700/20 transition-all duration-300 group flex flex-col h-full">
+                <div className={`aspect-video rounded-t-lg border-b border-gray-200 dark:border-gray-600 flex items-center justify-center ${post.slug==='ell3-benchmarking' ? 'bg-pink-100 dark:bg-pink-900/20' : post.slug==='function-calling-time-series' ? 'bg-cyan-100 dark:bg-cyan-900/20' : 'bg-purple-100 dark:bg-purple-900/20'}` }>
+                  {post.slug==='function-calling-time-series' ? <BookOpen className="h-10 w-10 text-cyan-600 dark:text-cyan-400" /> : post.slug==='codeact-mcp-rca' ? <BarChart3 className="h-10 w-10 text-purple-600 dark:text-purple-400" /> : <BarChart3 className="h-10 w-10 text-pink-600 dark:text-pink-400" />}
+                </div>
+                <CardHeader className="pb-4">
+                  <div className="flex items-center space-x-2 text-sm text-gray-500 dark:text-gray-400 mb-2">
+                    <Clock className="h-4 w-4" />
+                    <span>{post.readTime}</span>
+                    <span>•</span>
+                    <span>{post.date}</span>
                   </div>
-                </div>
-              </div>
-              <CardHeader className="pb-4">
-                <div className="flex items-center space-x-2 text-sm text-gray-500 dark:text-gray-400 mb-2">
-                  <Clock className="h-4 w-4" />
-                  <span>6 min read</span>
-                  <span>•</span>
-                  <span>Apr 24</span>
-                </div>
-                <CardTitle className="text-xl text-gray-900 dark:text-white group-hover:text-cyan-600 dark:group-hover:text-cyan-400 transition-colors">
-                  Beyond Text-to-SQL: Harnessing the Power of Function Calling for Time Series Data Insights
-                </CardTitle>
-              </CardHeader>
-              <CardContent>
-                <CardDescription className="text-gray-600 dark:text-gray-300 mb-4">
-                  Explore how Function Calling combined with Text-to-SQL techniques unlocks faster, richer insights from massive time-series datasets.
-                </CardDescription>
-                <Link href="/blog/function-calling-time-series" className="inline-flex items-center text-cyan-600 dark:text-cyan-400 hover:text-cyan-700 dark:hover:text-cyan-300 font-medium transition-colors">
-                  Read More
-                  <ArrowRight className="ml-1 h-4 w-4" />
-                </Link>
-              </CardContent>
-            </Card>
-
-            {/* Post 2 */}
-            <Card className="bg-white/80 dark:bg-black/50 border-gray-200 dark:border-gray-700 hover:shadow-lg dark:hover:shadow-gray-700/20 transition-all duration-300 group">
-              <div className="aspect-video bg-gradient-to-br from-purple-100 to-purple-200 dark:from-purple-900/20 dark:to-purple-700/20 rounded-t-lg border-b border-gray-200 dark:border-gray-600 relative overflow-hidden">
-                <div className="absolute inset-0 flex items-center justify-center">
-                  <div className="w-16 h-16 bg-purple-200 dark:bg-purple-500/20 rounded-full flex items-center justify-center border border-purple-300 dark:border-purple-500/30">
-                    <BarChart3 className="h-8 w-8 text-purple-600 dark:text-purple-400" />
-                  </div>
-                </div>
-              </div>
-              <CardHeader className="pb-4">
-                <div className="flex items-center space-x-2 text-sm text-gray-500 dark:text-gray-400 mb-2">
-                  <Clock className="h-4 w-4" />
-                  <span>4 min read</span>
-                  <span>•</span>
-                  <span>Apr 24</span>
-                </div>
-                <CardTitle className="text-xl text-gray-900 dark:text-white group-hover:text-cyan-600 dark:group-hover:text-cyan-400 transition-colors">
-                  From Dashboards to Dialogue: How CodeACT & MCP Power Autonomous Root Cause Analysis
-                </CardTitle>
-              </CardHeader>
-              <CardContent>
-                <CardDescription className="text-gray-600 dark:text-gray-300 mb-4">
-                  Dive into the shift from static dashboards to conversational analytics that automate RCA across distributed systems.
-                </CardDescription>
-                <Link href="/blog/codeact-mcp-rca" className="inline-flex items-center text-cyan-600 dark:text-cyan-400 hover:text-cyan-700 dark:hover:text-cyan-300 font-medium transition-colors">
-                  Read More
-                  <ArrowRight className="ml-1 h-4 w-4" />
-                </Link>
-              </CardContent>
-            </Card>
+                  <Link href={`/blog/${post.slug}`}> 
+                    <CardTitle className="text-lg font-semibold text-cyan-600 dark:text-cyan-400 hover:underline">
+                      {post.title}
+                    </CardTitle>
+                  </Link>
+                </CardHeader>
+                <CardContent className="flex flex-col justify-between h-full">
+                  <CardDescription className="text-gray-600 dark:text-gray-300 mb-4">
+                    {post.excerpt}
+                  </CardDescription>
+                  <Link href={`/blog/${post.slug}`} className="mt-auto inline-flex items-center text-cyan-600 dark:text-cyan-400 hover:text-cyan-700 dark:hover:text-cyan-300 font-medium transition-colors">
+                    Read More
+                    <ArrowRight className="ml-1 h-4 w-4" />
+                  </Link>
+                </CardContent>
+              </Card>
+            ))}
           </div>
 
           <div className="text-center mt-6">

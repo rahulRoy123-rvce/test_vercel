@@ -77,7 +77,7 @@ export default function BanyanIntelligenceLanding() {
                 <span className="text-gray-600 dark:text-gray-400"> at work </span>
               </h1>
               <p className="text-lg sm:text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto leading-relaxed px-4 sm:px-0">
-              Unlock <span className="text-cyan-500 font-semibold">real-time insights</span> and <span className="text-cyan-500 font-semibold">automated user feedback</span> with our AI agents by integrating your <span className="text-cyan-500 font-semibold">Shopify, Google Analytics, Calendar apps</span> and more.
+              Unlock <span className="text-cyan-500 font-semibold">real-time insights</span> and <span className="text-cyan-500 font-semibold">deep reasoning</span> with our AI agents by integrating your <span className="text-cyan-500 font-semibold">Shopify, Google Analytics, Calendar apps</span> and more.
               </p>
             </div>
 

@@ -112,7 +112,7 @@ export function ContactForm() {
               <div 
                 className={`mb-6 p-4 rounded-lg ${submitStatus.success ? 'bg-green-100 dark:bg-green-900/20 border border-green-300 dark:border-green-500/30' : 'bg-red-100 dark:bg-red-900/20 border border-red-300 dark:border-red-500/30'}`}
               >
-                <p className="text-center text-white">{submitStatus.message}</p>
+                <p className="text-center text-gray-800 dark:text-white">{submitStatus.message}</p>
                 
                 {submitStatus.success && (
                   <div className="mt-4 text-center">

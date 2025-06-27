@@ -175,7 +175,9 @@ export default function AgentCarouselSide() {
                     </Link>
                   ) : agent.id.includes("bico-agent") ? (
                     <Link
-                      href="/schedule-demo"
+                      href="https://bico.ell3.ai/"
+                      target="_blank"
+                      rel="noopener noreferrer"
                       className="hidden sm:inline-flex sm:absolute sm:top-4 sm:right-4 items-center bg-white dark:bg-gray-800 text-cyan-600 dark:text-white border-2 border-cyan-500 dark:border-gray-600 hover:bg-cyan-50 dark:hover:bg-gray-700 font-semibold text-sm px-4 py-2 md:px-6 md:py-3 rounded-full shadow transition-colors"
                     >
                       <span>Try Now</span>
@@ -214,7 +216,9 @@ export default function AgentCarouselSide() {
                           </Link>
                         ) : agent.id.includes("bico-agent") ? (
                           <Link
-                            href="/schedule-demo"
+                            href="https://bico.ell3.ai/"
+                            target="_blank"
+                            rel="noopener noreferrer"
                             className="mt-2 inline-flex items-center bg-white dark:bg-gray-800 text-cyan-600 dark:text-white border-2 border-cyan-500 dark:border-gray-600 hover:bg-cyan-50 dark:hover:bg-gray-700 font-semibold text-sm px-3 py-1.5 rounded-full shadow transition-colors sm:hidden"
                           >
                             <span>Try Now</span>

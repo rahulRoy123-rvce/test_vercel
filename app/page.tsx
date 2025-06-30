@@ -487,8 +487,8 @@ export default function BanyanIntelligenceLanding() {
               </Link>
             </div>
             <h4 className="text-xl font-bold tracking-tight sm:text-xl md:text-xl text-gray-900 dark:text-white">
-            AI Assistants for everyone
-            at work
+            Deep Reasoning Agents
+for your team
             </h4>
           </div>
         </div>
@@ -523,7 +523,8 @@ export default function BanyanIntelligenceLanding() {
                 <span className="text-xl font-bold dark:bg-black dark:text-white">Banyan Intelligence</span>
               </div>
               <div className="text-md dark:bg-black dark:text-white">
-              AI Assistants for everyone at work
+              Deep Reasoning Agents
+for your team
               </div>
               <div className="text-sm dark:bg-black dark:text-white">
                 <Link 

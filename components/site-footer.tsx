@@ -35,7 +35,8 @@ export default function SiteFooter() {
                 hi@banyanintelligence.com
               </Link>
             </div>
-            <div className="text-md text-white">AI Assistants for everyone at work</div>
+            <div className="text-md text-white">Deep Reasoning Agents
+            for your team</div>
           </div>
 
           {/* Agents */}

@@ -5,6 +5,7 @@ export interface BlogPost {
   date: string
   readTime: string
   updated?: string
+  cover?: string
   excerpt: string
 }
 
@@ -16,8 +17,9 @@ export const blogPosts: BlogPost[] = [
     date: "Apr 24, 2024",
     readTime: "4 min read",
     updated: "Apr 29, 2024",
+    cover: "/img1.jpg",
     excerpt:
-      "Discover how conversational intelligence powered by CodeACT and the Model Context Protocol transforms root cause analysis, eliminating dashboard overload and accelerating insights.",
+      "Discover how conversational intelligence powered by CodeACT and the Model Context Protocol transforms root cause analysis.",
   },
   {
     slug: "function-calling-time-series",
@@ -26,6 +28,7 @@ export const blogPosts: BlogPost[] = [
     date: "Apr 24, 2024",
     readTime: "6 min read",
     updated: "Apr 29, 2024",
+    cover: "/img2.jpg",
     excerpt:
       "Explore how Function Calling combined with Text-to-SQL techniques unlocks faster, richer insights from massive time-series datasets.",
   },
@@ -35,6 +38,7 @@ export const blogPosts: BlogPost[] = [
     author: "Senthilkumar Bala",
     date: "Jun 25, 2025",
     readTime: "8 min read",
+    cover: "/img3.jpg",
     excerpt:
       "Why traditional LLM benchmarks fall short for specialized agents and how we designed a composite evaluation pipeline for ell3, covering quantitative, qualitative, and operational metrics.",
   },

@@ -1,9 +1,11 @@
 import { blogPosts } from "@/components/blog-data"
 import { Badge } from "@/components/ui/badge"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
-import { Clock, BookOpen } from "lucide-react"
+import { Clock, BookOpen, BarChart3 } from "lucide-react"
 import Link from "next/link"
 import dynamic from "next/dynamic"
+import Image from "next/image"
+import type { Metadata } from "next"
 const SiteHeader = dynamic(() => import("@/components/site-header"), { ssr: false })
 import SiteFooter from "@/components/site-footer"
 
@@ -28,35 +30,41 @@ export default function BlogListing() {
           </p>
         </div>
 
-        <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3 max-w-6xl mx-auto">
+        <div className="grid auto-rows-[1fr] gap-8 sm:grid-cols-2 lg:grid-cols-3 max-w-6xl mx-auto">
           {blogPosts.map(post => (
-            <Card key={post.slug} className="bg-white/80 dark:bg-gray-900/60 border-gray-200 dark:border-gray-700 hover:shadow-lg transition-all duration-300 group h-full flex flex-col">
-              <div className="aspect-video rounded-t-lg bg-gradient-to-br from-cyan-100 to-purple-100 dark:from-cyan-900/20 dark:to-purple-900/20 border-b border-gray-200 dark:border-gray-600 flex items-center justify-center">
-                <BookOpen className="h-10 w-10 text-cyan-600 dark:text-cyan-400" />
-              </div>
-              <CardHeader className="pb-4">
-                <div className="flex items-center space-x-2 text-sm text-gray-500 dark:text-gray-400 mb-2">
-                  <Clock className="h-4 w-4" />
-                  <span>{post.readTime}</span>
-                  <span>•</span>
-                  <span>{post.date}</span>
-                </div>
-                <Link href={`/blog/${post.slug}`}> 
-                  <CardTitle className="text-lg font-semibold text-cyan-600 dark:text-cyan-400 hover:underline">
+            <Link key={post.slug} href={`/blog/${post.slug}`} className="group block">
+              <Card className="bg-white/80 dark:bg-gray-900/60 border-gray-200 dark:border-gray-700 hover:shadow-lg transition-all duration-300 flex flex-col h-full">
+                {post.cover ? (
+                  <div className="relative aspect-[4/3] rounded-t-lg overflow-hidden border-b border-gray-200 dark:border-gray-600">
+                    <Image src={post.cover} alt={`${post.title} cover image`} fill className="object-cover" sizes="(max-width: 768px) 100vw, 33vw" />
+                  </div>
+                ) : (
+                  <div className="relative aspect-video rounded-t-lg border-b border-gray-200 dark:border-gray-600 flex items-center justify-center bg-purple-100 dark:bg-purple-900/20">
+                    <BarChart3 className="h-10 w-10 text-purple-600 dark:text-purple-400" />
+                  </div>
+                )}
+                <CardHeader className="pb-4">
+                  <div className="flex items-center space-x-2 text-sm text-gray-500 dark:text-gray-400 mb-2">
+                    <Clock className="h-4 w-4" />
+                    <span>{post.readTime}</span>
+                    <span>•</span>
+                    <span>{post.date}</span>
+                  </div>
+                  <CardTitle className="text-lg font-semibold text-cyan-600 dark:text-cyan-400 group-hover:underline">
                     {post.title}
                   </CardTitle>
-                </Link>
-              </CardHeader>
-              <CardContent className="flex flex-col justify-between h-full">
-                <CardDescription className="text-gray-600 dark:text-gray-300 mb-4">
-                  {post.excerpt}
-                </CardDescription>
-                <Link href={`/blog/${post.slug}`} className="mt-auto inline-flex items-center text-cyan-600 dark:text-cyan-400 hover:text-cyan-700 dark:hover:text-cyan-300 font-medium transition-colors">
-                  Read More
-                  <BookOpen className="ml-1 h-4 w-4" />
-                </Link>
-              </CardContent>
-            </Card>
+                </CardHeader>
+                <CardContent className="flex flex-col flex-grow p-6 pt-0 pb-3">
+                  <CardDescription className="text-gray-600 dark:text-gray-300 flex-grow">
+                    {post.excerpt}
+                  </CardDescription>
+                  <span className="inline-flex items-center text-cyan-600 dark:text-cyan-400 group-hover:text-cyan-700 dark:group-hover:text-cyan-300 font-medium transition-colors">
+                    Read More
+                    <BookOpen className="ml-1 h-4 w-4" />
+                  </span>
+                </CardContent>
+              </Card>
+            </Link>
           ))}
         </div>
       </div>

@@ -6,6 +6,7 @@ import { Clock } from "lucide-react"
 import Link from "next/link"
 import dynamic from "next/dynamic"
 import type { Metadata } from "next"
+import Image from "next/image"
 const SiteHeader = dynamic(() => import("@/components/site-header"), { ssr: false })
 import SiteFooter from "@/components/site-footer"
 
@@ -63,6 +64,19 @@ export default function BlogPostPage({ params }: Props) {
             <span>{post.readTime}</span>
           </div>
         </div>
+
+        {post.cover && (
+          <div className="w-full relative h-48 sm:h-60 md:h-72 lg:h-80 xl:h-96 overflow-hidden rounded-lg">
+            <Image
+              src={post.cover}
+              alt={`Cover image for ${post.title}`}
+              fill
+              className="object-cover w-full h-full"
+              sizes="(max-width: 768px) 100vw, 80vw"
+              priority
+            />
+          </div>
+        )}
 
         <article className="prose prose-xl lg:prose-2xl 2xl:prose-2xl dark:prose-invert text-justify max-w-none space-y-10">
           {blogContents[post.slug]}

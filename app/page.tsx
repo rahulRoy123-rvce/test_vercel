@@ -425,35 +425,45 @@ export default function BanyanIntelligenceLanding() {
             </p>
           </div>
 
-          <div className="grid gap-6 sm:gap-8 md:grid-cols-2 lg:grid-cols-3 justify-center max-w-6xl mx-auto">
+          <div className="grid auto-rows-[1fr] gap-6 sm:gap-8 md:grid-cols-2 lg:grid-cols-3 justify-center max-w-6xl mx-auto">
             {blogPosts.slice(0,3).map(post => (
-              <Card key={post.slug} className="bg-white/80 dark:bg-black/50 border-gray-200 dark:border-gray-700 hover:shadow-lg dark:hover:shadow-gray-700/20 transition-all duration-300 group flex flex-col h-full">
-                <div className={`aspect-video rounded-t-lg border-b border-gray-200 dark:border-gray-600 flex items-center justify-center ${post.slug==='ell3-benchmarking' ? 'bg-pink-100 dark:bg-pink-900/20' : post.slug==='function-calling-time-series' ? 'bg-cyan-100 dark:bg-cyan-900/20' : 'bg-purple-100 dark:bg-purple-900/20'}` }>
-                  {post.slug==='function-calling-time-series' ? <BookOpen className="h-10 w-10 text-cyan-600 dark:text-cyan-400" /> : post.slug==='codeact-mcp-rca' ? <BarChart3 className="h-10 w-10 text-purple-600 dark:text-purple-400" /> : <BarChart3 className="h-10 w-10 text-pink-600 dark:text-pink-400" />}
-                </div>
-                <CardHeader className="pb-4">
-                  <div className="flex items-center space-x-2 text-sm text-gray-500 dark:text-gray-400 mb-2">
-                    <Clock className="h-4 w-4" />
-                    <span>{post.readTime}</span>
-                    <span>•</span>
-                    <span>{post.date}</span>
-                  </div>
-                  <Link href={`/blog/${post.slug}`}> 
-                    <CardTitle className="text-lg font-semibold text-cyan-600 dark:text-cyan-400 hover:underline">
+              <Link
+                key={post.slug}
+                href={`/blog/${post.slug}`}
+                className="group mb-0 block"
+              >
+                <Card className="bg-white/80 dark:bg-black/50 border-gray-200 dark:border-gray-700 hover:shadow-lg dark:hover:shadow-gray-700/20 transition-all duration-300 flex flex-col h-full">
+                  {post.cover ? (
+                    <div className="relative aspect-[4/3] rounded-t-lg overflow-hidden border-b border-gray-200 dark:border-gray-600">
+                      <Image src={post.cover} alt={`${post.title} cover image`} fill className="object-cover" sizes="(max-width: 768px) 100vw, 33vw" />
+                    </div>
+                  ) : (
+                    <div className={`aspect-video rounded-t-lg border-b border-gray-200 dark:border-gray-600 flex items-center justify-center ${post.slug==='ell3-benchmarking' ? 'bg-pink-100 dark:bg-pink-900/20' : 'bg-purple-100 dark:bg-purple-900/20'}` }>
+                      <BarChart3 className="h-10 w-10 text-purple-600 dark:text-purple-400" />
+                    </div>
+                  )}
+                  <CardHeader className="pb-4">
+                    <div className="flex items-center space-x-2 text-sm text-gray-500 dark:text-gray-400 mb-2">
+                      <Clock className="h-4 w-4" />
+                      <span>{post.readTime}</span>
+                      <span>•</span>
+                      <span>{post.date}</span>
+                    </div>
+                    <CardTitle className="text-lg font-semibold text-cyan-600 dark:text-cyan-400 group-hover:underline">
                       {post.title}
                     </CardTitle>
-                  </Link>
-                </CardHeader>
-                <CardContent className="flex flex-col justify-between h-full">
-                  <CardDescription className="text-gray-600 dark:text-gray-300 mb-4">
-                    {post.excerpt}
-                  </CardDescription>
-                  <Link href={`/blog/${post.slug}`} className="mt-auto inline-flex items-center text-cyan-600 dark:text-cyan-400 hover:text-cyan-700 dark:hover:text-cyan-300 font-medium transition-colors">
-                    Read More
-                    <ArrowRight className="ml-1 h-4 w-4" />
-                  </Link>
-                </CardContent>
-              </Card>
+                  </CardHeader>
+                  <CardContent className="flex flex-col flex-grow p-6 pt-0 pb-8">
+                    <CardDescription className="text-gray-600 dark:text-gray-300 flex-grow">
+                      {post.excerpt}
+                    </CardDescription>
+                    <span className="pt-4 inline-flex items-center text-cyan-600 dark:text-cyan-400 group-hover:text-cyan-700 dark:group-hover:text-cyan-300 font-medium transition-colors">
+                      Read More
+                      <ArrowRight className="ml-1 h-4 w-4" />
+                    </span>
+                  </CardContent>
+                </Card>
+              </Link>
             ))}
           </div>
 
@@ -523,8 +533,7 @@ for your team
                 <span className="text-xl font-bold dark:bg-black dark:text-white">Banyan Intelligence</span>
               </div>
               <div className="text-md dark:bg-black dark:text-white">
-              Deep Reasoning Agents
-for your team
+              Deep Reasoning Agents for your team
               </div>
               <div className="text-sm dark:bg-black dark:text-white">
                 <Link 
